@@ -1,1 +1,72 @@
-<p>reentrant-search works!</p>
+<div>
+  <h1>
+    <mat-icon>search</mat-icon> Reentrant search
+  </h1>
+  <h3>
+    Individual Reentrat Search
+  </h3>
+  <p class="description">At least one field is required.</p>
+  <mat-divider></mat-divider>
+  <h3 class="headers">Reentrant Primary Identifiers</h3>
+  <div>
+    <p>Reentrant Identifier (SID#/DOC#/PBPP#/ICOTS#/FBI#/Phill. Photo Id# ) </p>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Type a SID#, DOC#, PBPP#, ICOTS#, FBI# or Phill. Photo Id#.">
+    </mat-form-field>
+  </div>
+  <h3 class="headers">Reentrant Demographics</h3>
+
+  <div>
+    <p>Last Name </p>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Type the Last name">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <p>First Name </p>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Type the First name">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <p>Middle Name </p>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Type the Middle name">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <p>Date of Birth </p>
+    <mat-form-field appearance="outline">
+      <input matInput [matDatepicker]="picker" placeholder="Select the Date of Birth">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    <p>Sex </p>
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Option 1</mat-radio-button>
+      <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div>
+    <p>Race </p>
+    <mat-form-field appearance="outline">
+      <mat-select placeholder="Select One">
+        <input matInput class="" placeholder="search " (keyup)="onKey($event.target.value)">
+        <mat-option *ngFor="let race of races" [value]="race">
+          {{race}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="actions">
+    <button mat-button></button>
+
+  </div>
+</div>
