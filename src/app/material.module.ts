@@ -42,6 +42,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
 
 
+
 @NgModule({
   exports: [
     CdkStepperModule,
@@ -85,7 +86,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     MatTreeModule,
     OverlayModule,
     PortalModule,
-    ScrollingModule,
+    ScrollingModule
   ]
 })
 export class MaterialModule { }
