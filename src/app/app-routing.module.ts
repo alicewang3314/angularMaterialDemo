@@ -10,7 +10,7 @@ const routes: Routes = [
     component: ReentrantSearchComponent
   },
   {
-    path: 'search-results',
+    path: 'results',
     component: ResultComponent
   },
   {

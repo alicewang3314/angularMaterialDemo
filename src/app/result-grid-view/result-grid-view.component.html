@@ -1,1 +1,18 @@
-<p>result-grid-view works!</p>
+<div *ngFor="let profiles of currentPage">
+  <div class="row">
+    <div class="col-s-12 col-md-4 tile" *ngFor="let profile of profiles">
+      <flip-card [data]="profile"></flip-card>
+    </div>
+  </div>
+</div>
+
+<div class="custom-paginator">
+  <mat-form-field appearance="outline" class="paginator-jump-to">
+    <input type="number" matInput placeholder="Go to page" [(ngModel)]="goToPage">
+    <button *ngIf="goToPage" matSuffix mat-icon-button aria-label="Clear" (click)="jumpToPage(goToPage)">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-paginator #paginator [length]="length" [pageSize]="1" [hidePageSize]="true" [showFirstLastButtons]="true"
+    (page)="pageEvent = refreshPage($event)"></mat-paginator>
+</div>

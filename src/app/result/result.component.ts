@@ -8,10 +8,10 @@ import { HttpClient } from '@angular/common/http'
 })
 export class ResultComponent implements OnInit {
   data: any[] = [];
+  
   constructor(private http: HttpClient) {
     http.get('./assets/mock.json').subscribe((res: any[]) => {
       this.data = res;
-      console.log(this.data)
     });
   }
 
