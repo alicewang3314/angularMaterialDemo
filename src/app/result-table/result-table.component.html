@@ -1,1 +1,48 @@
-<p>result-table works!</p>
+{{data | json}}
+<table fixLayout mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="docIdentifier">
+    <th mat-header-cell *matHeaderCellDef> docIdentifier </th>
+    <td mat-cell *matCellDef="let element"> {{element.docIdentifier}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="offenderName">
+    <th mat-header-cell *matHeaderCellDef> offenderName </th>
+    <td mat-cell *matCellDef="let element"> {{element.offenderName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="pbppIdentifier">
+    <th mat-header-cell *matHeaderCellDef> pbppIdentifier </th>
+    <td mat-cell *matCellDef="let element"> {{element.pbppIdentifier}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="personalId">
+    <th mat-header-cell *matHeaderCellDef> personalId </th>
+    <td mat-cell *matCellDef="let element"> {{element.personalId}} </td>
+  </ng-container>
+  <ng-container matColumnDef="race">
+    <th mat-header-cell *matHeaderCellDef> race </th>
+    <td mat-cell *matCellDef="let element"> {{element.race}} </td>
+  </ng-container>
+  <ng-container matColumnDef="sex">
+    <th mat-header-cell *matHeaderCellDef> sex </th>
+    <td mat-cell *matCellDef="let element"> {{element.sex}} </td>
+  </ng-container>
+  <ng-container matColumnDef="sid">
+    <th mat-header-cell *matHeaderCellDef> sid </th>
+    <td mat-cell *matCellDef="let element"> {{element.sid}} </td>
+  </ng-container>
+  <ng-container matColumnDef="dob">
+    <th mat-header-cell *matHeaderCellDef> dob </th>
+    <td mat-cell *matCellDef="let element"> {{element.dob}} </td>
+  </ng-container>
+  <ng-container matColumnDef="icotsNo">
+    <th mat-header-cell *matHeaderCellDef> icotsNo </th>
+    <td mat-cell *matCellDef="let element"> {{element.icotsNo}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons>
+</mat-paginator>
