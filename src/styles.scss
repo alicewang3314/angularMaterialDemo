@@ -27,6 +27,7 @@
 
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.css';
+@import '~@angular/material/theming';
 
 html,
 body {
@@ -58,4 +59,8 @@ body {
 
 .mat-radio-outer-circle {
   background-color: white !important;
+}
+
+.mat-divider {
+  border-color: orange !important;
 }

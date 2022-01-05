@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ReentrantSearchComponent } from './reentrant-search/reentrant-search.component';
 import { ResultComponent } from './result/result.component';
-import { DetailsComponent } from './details/details.component'
+import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
   {
