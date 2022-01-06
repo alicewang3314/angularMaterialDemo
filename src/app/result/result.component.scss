@@ -1,0 +1,17 @@
+.card-header-btn-group {
+  width: auto;
+}
+
+::ng-deep.mat-card-header {
+  justify-content: space-between;
+}
+
+.mat-card {
+  margin-bottom: 20px;
+  background-color: black;
+  color: white;
+}
+
+.active {
+  background-color: orange;
+}

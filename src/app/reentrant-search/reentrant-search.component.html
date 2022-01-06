@@ -1,83 +1,87 @@
-<form [formGroup]="reentrantSearch" (ngSubmit)="onSubmit()" >
-  <h1>
-    <mat-icon>search</mat-icon> Reentrant search
-  </h1>
-  <h3>
-    Individual Reentrat Search
-  </h3>
-  <p class="description">At least one field is required.</p>
-  <mat-divider></mat-divider>
-  <h3 class="headers">Reentrant Primary Identifiers</h3>
-  <div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <p>Reentrant Identifier (SID#/DOC#/PBPP#/ICOTS#/FBI#/Phill. Photo Id# ) </p>
-        <mat-form-field appearance="outline">
-          <input formControlName="identifier" matInput
-            placeholder="Type a SID#, DOC#, PBPP#, ICOTS#, FBI# or Phill. Photo Id#.">
-        </mat-form-field>
+<mat-card>
+  <form [formGroup]="reentrantSearch" (ngSubmit)="onSubmit()">
+    <h3>
+      Individual Reentrat Search
+    </h3>
+    <p class="description">At least one field is required.</p>
+    <mat-divider></mat-divider>
+    <br />
+    <h3 class="headers">Reentrant Primary Identifiers</h3>
+    <div>
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <p>Reentrant Identifier (SID#/DOC#/PBPP#/ICOTS#/FBI#/Phill. Photo Id# ) </p>
+          <mat-form-field appearance="outline">
+            <input formControlName="identifier" matInput
+              placeholder="Type a SID#, DOC#, PBPP#, ICOTS#, FBI# or Phill. Photo Id#.">
+          </mat-form-field>
+        </div>
       </div>
     </div>
-  </div>
-  <h3 class="headers">Reentrant Demographics</h3>
-  <div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <p>Last Name </p>
-        <mat-form-field appearance="outline">
-          <input formControlName="lastName" matInput placeholder="Type the Last name">
-        </mat-form-field>
+    <h3 class="headers">Reentrant Demographics</h3>
+    <div>
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <p>Last Name </p>
+          <mat-form-field appearance="outline">
+            <input formControlName="lastName" matInput placeholder="Type the Last name">
+          </mat-form-field>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <p>First Name </p>
+          <mat-form-field appearance="outline">
+            <input formControlName="firstName" matInput placeholder="Type the First name">
+          </mat-form-field>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <p>Middle Name </p>
+          <mat-form-field appearance="outline">
+            <input formControlName="middleName" matInput placeholder="Type the Middle name">
+          </mat-form-field>
+        </div>
       </div>
 
-      <div class="col-xs-12 col-md-4">
-        <p>First Name </p>
-        <mat-form-field appearance="outline">
-          <input formControlName="firstName" matInput placeholder="Type the First name">
-        </mat-form-field>
-      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <p>Date of Birth </p>
+          <mat-form-field appearance="outline">
+            <input formControlName="dob" matInput [matDatepicker]="picker" placeholder="Select the Date of Birth">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
 
-      <div class="col-xs-12 col-md-4">
-        <p>Middle Name </p>
-        <mat-form-field appearance="outline">
-          <input formControlName="middleName" matInput placeholder="Type the Middle name">
-        </mat-form-field>
+        <div class="col-xs-12 col-md-4">
+          <p>Sex </p>
+          <mat-radio-group formControlName="sex" aria-label="Select an option">
+            <mat-radio-button value="male">Male</mat-radio-button> &nbsp;
+            <mat-radio-button value="female">Female</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <p>Race </p>
+          <mat-form-field appearance="outline">
+            <mat-select formControlName="race" placeholder="Select One" (selectionChange)="resetDropdown">
+              <input matInput class="dropdown_filter" placeholder="Search"
+                (keyup)="filterDropdown($event.target.value)">
+              <mat-option *ngFor="let race of races" [value]="race">
+                {{race}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <p>Date of Birth </p>
-        <mat-form-field appearance="outline">
-          <input formControlName="dob" matInput [matDatepicker]="picker" placeholder="Select the Date of Birth">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </div>
-
-      <div class="col-xs-12 col-md-4">
-        <p>Sex </p>
-        <mat-radio-group formControlName="sex" aria-label="Select an option">
-          <mat-radio-button value="male">Male</mat-radio-button> &nbsp;
-          <mat-radio-button value="female">Female</mat-radio-button>
-        </mat-radio-group>
-      </div>
-
-      <div class="col-xs-12 col-md-4">
-        <p>Race </p>
-        <mat-form-field appearance="outline">
-          <mat-select formControlName="race" placeholder="Select One" (selectionChange)="resetDropdown">
-            <input matInput class="dropdown_filter" placeholder="Search" (keyup)="filterDropdown($event.target.value)">
-            <mat-option *ngFor="let race of races" [value]="race">
-              {{race}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+    <div class="btn-group">
+      <button mat-button type="reset" (click)="reentrantSearch.reset()">Clear</button>
+      <div>
+        <button mat-button type="submit" *ngIf="hideBtn" (click)="onHide.emit()">Hide Filters</button>
+        <button mat-button type="submit" [disabled]="reentrantSearch.pristine">Search</button>
       </div>
     </div>
-  </div>
-
-  <div class="btn-group">
-    <button mat-button type="reset" (click)="reentrantSearch.reset()">Clear</button>
-    <button mat-button type="submit" [disabled]="reentrantSearch.pristine">Search</button>
-  </div>
-</form>
+  </form>
+</mat-card>

@@ -1,3 +1,48 @@
 table.mat-table {
   width: 100%;
 }
+
+.mat-header-row {
+  background-color: grey;
+  border-bottom: 3px solid orange;
+}
+
+.mat-row {
+  background-color: rgb(50, 44, 44);
+
+  &:hover {
+    background-color: black;
+    cursor: pointer;
+  }
+}
+
+.mat-cell,
+.mat-header-cell {
+  color: white;
+}
+
+.mat-paginator {
+  background-color: rgb(50, 44, 44);
+  color: white;
+}
+
+.mat-select {
+  color: white;
+}
+
+::ng-deep {
+
+  .mat-select-arrow {
+    color: white !important;
+  }
+
+  .mat-select-value-text {
+    color: white !important;
+  }
+}
+
+button:disabled {
+  color: gray;
+}
+
+

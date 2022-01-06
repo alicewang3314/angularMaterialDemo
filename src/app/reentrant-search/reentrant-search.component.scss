@@ -14,3 +14,17 @@
   display: flex;
   justify-content: space-between;
 }
+
+.mat-card {
+  margin-bottom: 20px;
+  background-color: black;
+  color: white;
+}
+
+.mat-divider {
+  margin-bottom: 20px;
+}
+
+.mat-button[disabled][disabled] {
+  color: rgb(169, 169, 169);
+}

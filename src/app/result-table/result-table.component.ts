@@ -16,7 +16,7 @@ export class ResultTableComponent implements AfterViewInit {
     }
   };
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  displayedColumns: string[] = ['docIdentifier', 'offenderName', 'pbppIdentifier', 'personalId', 'race', 'sex', 'sid', 'dob', 'icotsNo'];
+  displayedColumns: string[] = ['offenderName', 'sid', 'docIdentifier', 'pbppIdentifier','icotsNo' ,'sex', 'race', 'dob']
   dataSource = new MatTableDataSource<ReentrantProfile>([]);
 
   constructor() { }

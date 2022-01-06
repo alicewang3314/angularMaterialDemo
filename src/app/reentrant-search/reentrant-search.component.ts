@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 
@@ -18,6 +18,8 @@ export class ReentrantSearchComponent implements OnInit, AfterContentInit {
     race: new FormControl(''),
     sex: new FormControl('')
   });
+  @Input('showHideBtn') hideBtn: boolean = false;
+  @Output('onHide') onHide: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 

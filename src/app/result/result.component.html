@@ -1,3 +1,29 @@
-<app-result-grid-view [data]="data"></app-result-grid-view>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Individual Reentrant Search</mat-card-title>
+    <mat-card-subtitle>
+      <p class="description">At least one field is required.</p>
+    </mat-card-subtitle>
+    <div class="card-header-btn-group">
+      <button mat-button (click)="showFilters = !showFilters">View Fiters</button>
+    </div>
+  </mat-card-header>
+  <mat-card-content *ngIf="showFilters">
+    <app-reentrant-search [showHideBtn]="true" (onHide)="showFilters = false"></app-reentrant-search>
+  </mat-card-content>
+</mat-card>
 
-<app-result-table [data]="data"></app-result-table>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Reentrant Search Results</mat-card-title>
+    <mat-card-subtitle class="white">Your search criteria ..... todo</mat-card-subtitle>
+    <div class="card-header-btn-group">
+      <button mat-button (click)="view='table'" [class.active]="isActive('table')">Table</button>
+      <button mat-button (click)="view='tile'" [class.active]="isActive('tile')">Tile</button>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <app-result-grid-view *ngIf="view === 'tile'" [data]="data"></app-result-grid-view>
+    <app-result-table *ngIf="view === 'table'" [data]="data"></app-result-table>
+  </mat-card-content>
+</mat-card>

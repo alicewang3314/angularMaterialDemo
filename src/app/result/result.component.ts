@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http'
 })
 export class ResultComponent implements OnInit {
   data: any[] = [];
+  view: 'table' | 'tile' = 'table';
+  showfilters = false;
   
   constructor(private http: HttpClient) {
     http.get('./assets/mock.json').subscribe((res: any[]) => {
@@ -16,5 +18,11 @@ export class ResultComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  
+
+  isActive(name: string) {
+    return this.view === name;
   }
 }
