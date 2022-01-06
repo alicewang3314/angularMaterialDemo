@@ -1,6 +1,18 @@
-<h2>
-  <mat-icon>search</mat-icon> Reentrant's Profile
-</h2>
+<div class="header">
+  <h2 class="">
+    <mat-icon>search</mat-icon> Reentrant's Profile
+  </h2>
+  <div class="quick-search">
+    Quick Reentrant search
+    <mat-form-field appearance="outline">
+      <input matInput
+        placeholder="Type a SID#, DOC#, PBPP#, ICOTS#, FBI# or Phill. Photo Id#.">
+        <button matSuffix mat-icon-button aria-label="search">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+  </div>
+</div>
 <div class="wrapper">
   <mat-divider></mat-divider>
   <div class="picture-container">
@@ -43,7 +55,35 @@
 </div>
 
 <mat-tab-group>
-  <mat-tab label="Sentenceing"> Content 1
+  <mat-tab label="Sentenceing">
+    <div class="info">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <b>Offense Code:</b>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <b>DOC Status:</b>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-3">
+          <b>Date of Birth#:</b>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <b>Sex:</b>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <b>Permanent Location: </b>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <b>Temporary Location:</b>
+        </div>
+      </div>
+    </div>
   </mat-tab>
   <mat-tab label="Demographics"> Content 2
   </mat-tab>

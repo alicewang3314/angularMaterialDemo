@@ -22,3 +22,14 @@
 ::ng-deep .mat-tab-label {
   width: 20% !important;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 0 0;
+
+  .quick-search {
+    display: flex;
+    flex-direction: column;
+  }
+}
