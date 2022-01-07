@@ -5,10 +5,13 @@
         <mat-card-title>{{data.offenderName}}</mat-card-title>
       </mat-card-header>
       <mat-card-content class="content">
-        <p><b>SID# </b>  {{data.sid}}</p>
-        <p><b>DOC# </b>  {{data.docIdentifier}}</p>
-        <p><b>PBPP#</b>  {{data.pbppIdentifier}}</p>
-        <p><b>ICOTS#</b>  {{data.icotsNo}}</p>
+        <img class="photo" src="/assets/offender.png" alt="offender oupicture">
+        <div class="offender-info">
+          <p><b>SID# </b> {{data.sid}}</p>
+          <p><b>DOC# </b> {{data.docIdentifier}}</p>
+          <p><b>PBPP#</b> {{data.pbppIdentifier}}</p>
+          <p><b>ICOTS#</b> {{data.icotsNo}}</p>
+        </div>
       </mat-card-content>
       <mat-card-actions class="actions">
         <button mat-button (click)="toggle()">
@@ -24,9 +27,9 @@
         <mat-card-title>Other Reentrant Details</mat-card-title>
       </mat-card-header>
       <mat-card-content class="content">
-        <p><b>SEX </b>  {{data.sex}}</p>
-        <p><b>Race </b>  {{data.race}}</p>
-        <p><b>DOB</b>  {{data.dob}}</p>
+        <p><b>SEX </b> {{data.sex}}</p>
+        <p><b>Race </b> {{data.race}}</p>
+        <p><b>DOB</b> {{data.dob}}</p>
       </mat-card-content>
       <mat-card-actions class="actions">
         <button mat-button class="flip-btn" (click)="toggle()">
