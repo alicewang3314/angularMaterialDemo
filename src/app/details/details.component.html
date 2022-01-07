@@ -1,74 +1,46 @@
 <div class="header">
-  <h2 class="">
+  <h2>
     <mat-icon>search</mat-icon> Reentrant's Profile
   </h2>
   <div class="quick-search">
     Quick Reentrant search
     <mat-form-field appearance="outline">
-      <input matInput
-        placeholder="Type a SID#, DOC#, PBPP#, ICOTS#, FBI# or Phill. Photo Id#.">
-        <button matSuffix mat-icon-button aria-label="search">
-          <mat-icon>search</mat-icon>
-        </button>
-      </mat-form-field>
+      <input matInput placeholder="Type a SID#, DOC#, PBPP#, ICOTS#, FBI# or Phill. Photo Id#.">
+      <button matSuffix mat-icon-button aria-label="search">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
   </div>
 </div>
-<div class="wrapper">
+
+<mat-card>
+  <h4 class="white">offender name</h4>
   <mat-divider></mat-divider>
-  <div class="picture-container">
-    <div class="picture"></div>
-  </div>
-  <div class="info">
-    <div class="row">
-      <div class="col-xs-12 col-md-3">
-        <b>SID#:</b>
-      </div>
-      <div class="col-xs-12 col-md-3">
-        <b>PBPP#:</b>
-      </div>
-      <div class="col-xs-12 col-md-3">
-        <b>DOC#:</b>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-md-3">
-        <b>Date of Birth#:</b>
-      </div>
-      <div class="col-xs-12 col-md-3">
-        <b>Race:</b>
-      </div>
-      <div class="col-xs-12 col-md-3">
-        <b>Sex:</b>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <b>Permanent Location: </b>
-      </div>
-      <div class="col-xs-12 col-md-6">
-        <b>Temporary Location:</b>
-      </div>
-    </div>
-  </div>
-</div>
-
-<mat-tab-group>
-  <mat-tab label="Sentenceing">
+  <div class="wrapper">
+    <!-- <div class="picture-container">
+      <div class="picture"> -->
+    <img class="photo" src="/assets/offender.png" alt="offender oupicture">
+    <!-- </div>
+    </div> -->
     <div class="info">
       <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <b>Offense Code:</b>
+        <div class="col-xs-12 col-md-3">
+          <b>SID#:</b>
         </div>
-        <div class="col-xs-12 col-md-6">
-          <b>DOC Status:</b>
+        <div class="col-xs-12 col-md-3">
+          <b>PBPP#:</b>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <b>DOC#:</b>
         </div>
       </div>
 
       <div class="row">
         <div class="col-xs-12 col-md-3">
           <b>Date of Birth#:</b>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <b>Race:</b>
         </div>
         <div class="col-xs-12 col-md-3">
           <b>Sex:</b>
@@ -84,13 +56,46 @@
         </div>
       </div>
     </div>
-  </mat-tab>
-  <mat-tab label="Demographics"> Content 2
-  </mat-tab>
-  <mat-tab label="Supervision"> Content 3
-  </mat-tab>
-  <mat-tab label="Problem Areas"> Content 3
-  </mat-tab>
-  <mat-tab label="Case Assignment"> Content 3
-  </mat-tab>
-</mat-tab-group>
+  </div>
+
+  <mat-tab-group [backgroundColor]="'primary'">
+    <mat-tab label="Sentenceing">
+      <div class="info">
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <b>Offense Code:</b>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <b>DOC Status:</b>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <b>Date of Birth#:</b>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <b>Sex:</b>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <b>Permanent Location: </b>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <b>Temporary Location:</b>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Demographics"> Content 2
+    </mat-tab>
+    <mat-tab label="Supervision"> Content 3
+    </mat-tab>
+    <mat-tab label="Problem Areas"> Content 3
+    </mat-tab>
+    <mat-tab label="Case Assignment"> Content 3
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

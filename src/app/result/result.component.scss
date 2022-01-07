@@ -1,5 +1,9 @@
 .card-header-btn-group {
-  width: auto;
+  width: 20%;
+
+  button {
+    margin-right: 15px;
+  }
 }
 
 ::ng-deep.mat-card-header {
@@ -14,4 +18,8 @@
 
 .active {
   background-color: orange;
+}
+
+.mat-card-subtitle {
+  width: 80%;
 }

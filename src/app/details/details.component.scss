@@ -1,18 +1,9 @@
-.picture {
-  border: 2px orange solid;
-  height: 150px;
-  width: 120px;
-  border-radius: 10px;
-}
 
-.picture-container {
-  display: inline-block;
-  padding: 20px;
-}
 
 .info {
   display: inline-block;
   width: 80%;
+  padding: 20px 30px;
 }
 
 .row>div {
@@ -33,3 +24,21 @@
     flex-direction: column;
   }
 }
+
+.photo {
+  width: 100px;
+  // border: 2px orange solid;
+  border-radius: 3%;
+  margin-top: -80px;
+}
+.mat-card {
+  color: orange;
+  background-color: black;
+}
+
+::ng-deep.mat-tab-label-active
+{
+    background-color: black !important;
+    opacity: 0.8;
+    color: orange !important;
+} 

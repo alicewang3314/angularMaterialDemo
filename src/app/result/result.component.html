@@ -16,7 +16,11 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>Reentrant Search Results</mat-card-title>
-    <mat-card-subtitle class="white">Your search criteria ..... todo</mat-card-subtitle>
+    <mat-card-subtitle class="white">
+      Your search criteria resulted in multiple results. Choose the correct result by
+      clicking on "SELECT" or click on "FLIP" for additional information. Results contain matching aliases.
+      Search results are limited to 500 records. Please enter additional criteria to narrow your search.
+    </mat-card-subtitle>
     <div class="card-header-btn-group">
       <button mat-button (click)="view='table'" [class.active]="isActive('table')">Table</button>
       <button mat-button (click)="view='tile'" [class.active]="isActive('tile')">Tile</button>
