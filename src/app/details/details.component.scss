@@ -5,7 +5,7 @@
 }
 
 .row>div {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 ::ng-deep .mat-tab-label {
@@ -50,6 +50,20 @@
   color: orange !important;
 }
 
-// .identity-icon {
-//   font-size: 2rem;
-// }
+.personal-info, .employer-info, .supervision{
+  h4 {
+    border-bottom: 1px solid whitesmoke;
+    text-align: center;
+  }
+}
+
+ul {
+  list-style: none;
+   li {
+     padding-bottom: 16px;
+   }
+}
+
+::ng-deep.mat-tab-body-content {
+  overflow: hidden !important;
+}
