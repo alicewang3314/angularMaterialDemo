@@ -5,7 +5,7 @@
       <p class="description">At least one field is required.</p>
     </mat-card-subtitle>
     <div class="card-header-btn-group">
-      <button mat-button (click)="showFilters = !showFilters">View Fiters</button>
+      <button mat-button *ngIf="!showFilters" (click)="showFilters = !showFilters">View Fiters</button>
     </div>
   </mat-card-header>
   <mat-card-content *ngIf="showFilters">
