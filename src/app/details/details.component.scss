@@ -50,7 +50,9 @@
   color: orange !important;
 }
 
-.personal-info, .employer-info, .supervision{
+.personal-info,
+.employer-info,
+.supervision {
   h4 {
     border-bottom: 1px solid whitesmoke;
     text-align: center;
@@ -59,11 +61,17 @@
 
 ul {
   list-style: none;
-   li {
-     padding-bottom: 16px;
-   }
+
+  li {
+    padding-bottom: 16px;
+  }
 }
 
 ::ng-deep.mat-tab-body-content {
   overflow: hidden !important;
+}
+
+
+::ng-deep.mat-tab-body-wrapper {
+  padding-top: 15px;
 }

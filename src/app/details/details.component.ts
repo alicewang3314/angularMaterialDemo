@@ -44,11 +44,33 @@ export class DetailsComponent implements OnInit {
     "Receiving State"
   ];
 
-
-  
-
-
-
+  problemAreas = {
+    'Behavior': [
+      "STG",
+      "Violent/Assaultive",
+      "Sex Offender",
+      "SVP",
+      "Minor Victim",
+      "Drug",
+      "Alcohol",
+      "Escape",
+      "Walk Off",
+      "Mental Health",
+      "Suicide Attempt History",
+      "Domestic Violence"
+    ],
+    'houHousingsing': [
+      "Escape Risk List",
+      "Housing Concerns",
+      "Temporary Hold In",
+      "Restricted Release List",
+      "Seriously Mentally Ill"
+    ],
+    'Supervision Protocols': [
+      "Sex Offender Protocol",
+      "Domestic Violence Protocol"
+    ]
+  };
 
   constructor() { }
 

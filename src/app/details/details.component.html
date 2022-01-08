@@ -51,7 +51,6 @@
       </div>
     </div>
   </div>
-
   <mat-tab-group [backgroundColor]="'primary'">
     <mat-tab label="Sentenceing">
       <div class="info">
@@ -168,13 +167,13 @@
     <mat-tab label="Supervision" class="supervision">
       <div class="row">
         <div class="col-xs-12 col-md-6">
-          <ul>
-            <li *ngFor="let item of supervision"><b>{{item}}:</b></li>
+          <ul *ngFor="let item of supervision; let i = index">
+            <li *ngIf="i<(supervision.length/2)"><b>{{item}}:</b></li>
           </ul>
         </div>
         <div class="col-xs-12 col-md-6">
-          <ul>
-            <li *ngFor="let item of supervision"><b>{{item}}:</b></li>
+          <ul *ngFor="let item of supervision; let i = index">
+            <li *ngIf="i>(supervision.length/2) || i==(supervision.length/2)"><b>{{item}}:</b></li>
           </ul>
         </div>
       </div>
