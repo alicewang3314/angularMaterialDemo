@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CacheService } from 'src/app/service/cache.service';
 
 @Component({
   selector: 'app-details',
@@ -72,9 +73,12 @@ export class DetailsComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  offenderDetails: any = {};
+
+  constructor(private cache: CacheService) { }
 
   ngOnInit() {
+    this.offenderDetails = this.cache.seletedReentrant;
+    console.log(this.offenderDetails)
   }
-
 }

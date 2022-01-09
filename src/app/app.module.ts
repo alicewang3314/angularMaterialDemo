@@ -13,6 +13,7 @@ import { ResultComponent } from './result/result.component';
 import { FlipCardComponent } from './flip-card/flip-card.component';
 import { DetailsComponent } from './details/details.component';
 import { ResultTableComponent } from './result-table/result-table.component';
+import { RouterService } from 'src/app/service/router.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { ResultTableComponent } from './result-table/result-table.component';
     MaterialModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [RouterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { ReentrantProfile } from 'src/app/types/reentrantProfile';
+import { CacheService } from 'src/app/service/cache.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-result-table',
@@ -16,10 +18,16 @@ export class ResultTableComponent implements AfterViewInit {
     }
   };
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  displayedColumns: string[] = ['offenderName', 'sid', 'docIdentifier', 'pbppIdentifier','icotsNo' ,'sex', 'race', 'dob']
+  displayedColumns: string[] = ['offenderName', 'sid', 'docIdentifier', 'pbppIdentifier', 'icotsNo', 'sex', 'race', 'dob']
   dataSource = new MatTableDataSource<ReentrantProfile>([]);
 
-  constructor() { }
+  reentrantDetails(val: any) {
+    console.log(val);
+    this.cache.seletedReentrant = val;
+    this.router.navigateByUrl('details');
+  }
+
+  constructor(private cache: CacheService, private router: Router) { }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;

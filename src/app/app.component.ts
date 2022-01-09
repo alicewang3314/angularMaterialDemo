@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoaderService } from 'src/app/service/loader.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularCaptorDemo';
+  isLoading$ = this.loader.isloading$;
+
+  constructor(private loader: LoaderService) {
+
+  }
 }

@@ -14,39 +14,39 @@
 </div>
 
 <mat-card>
-  <h4 class="white">offender name</h4>
+  <h4 class="white">{{offenderDetails?.offenderName}}</h4>
   <mat-divider></mat-divider>
   <div class="wrapper">
     <img class="photo" src="/assets/offender.png" alt="offender oupicture">
     <div class="info">
       <div class="row">
         <div class="col-xs-12 col-md-3">
-          <b>SID#:</b>
+          <b>SID#:</b> &nbsp;<span class="white">{{offenderDetails?.sid}}</span>
         </div>
         <div class="col-xs-12 col-md-3">
-          <b>PBPP#:</b>
+          <b>PBPP#:</b> &nbsp;<span class="white">{{offenderDetails?.pbppIdentifier}}</span>
         </div>
         <div class="col-xs-12 col-md-3">
-          <b>DOC#:</b>
+          <b>DOC#:</b> &nbsp;<span class="white">{{offenderDetails?.docIdentifier}}</span>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-md-3">
-          <b>Date of Birth#:</b>
+          <b>Date of Birth#:</b> &nbsp;<span class="white">{{offenderDetails?.dob | date}}</span>
         </div>
         <div class="col-xs-12 col-md-3">
-          <b>Race:</b>
+          <b>Race:</b>&nbsp;<span class="white">{{offenderDetails?.race}}</span>
         </div>
         <div class="col-xs-12 col-md-3">
-          <b>Sex:</b>
+          <b>Sex:</b>&nbsp;<span class="white">{{offenderDetails?.sex}}</span>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-md-6">
-          <b>Permanent Location: </b>
+          <b>Permanent Location: </b>&nbsp;<span class="white">{{offenderDetails?.pbppIdentifier}}</span>
         </div>
         <div class="col-xs-12 col-md-6">
-          <b>Temporary Location:</b>
+          <b>Temporary Location:</b>&nbsp;<span class="white">{{offenderDetails?.pbppIdentifier}}</span>
         </div>
       </div>
     </div>
@@ -62,7 +62,6 @@
             <b>DOC Status:</b>
           </div>
         </div>
-
         <div class="row">
           <div class="col-xs-12 col-md-6">
             <b>Committing County:</b>
