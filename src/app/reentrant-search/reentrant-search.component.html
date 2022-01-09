@@ -1,12 +1,14 @@
-<h2>
+<h2 *ngIf="showHideBtn">
   <mat-icon>search</mat-icon> Reentrant search
 </h2>
 <mat-card>
   <form [formGroup]="reentrantSearch" (ngSubmit)="onSubmit()">
-    <h3>
-      Individual Reentrat Search
-    </h3>
-    <p class="description">At least one field is required.</p>
+    <ng-container *ngIf="showHideBtn"> 
+      <h3>
+        Individual Reentrat Search
+      </h3>
+      <p class="description">At least one field is required.</p>
+    </ng-container>
     <mat-divider></mat-divider>
     <br />
     <h3 class="headers">Reentrant Primary Identifiers</h3>
