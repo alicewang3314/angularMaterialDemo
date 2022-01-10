@@ -14,6 +14,7 @@ import { FlipCardComponent } from './flip-card/flip-card.component';
 import { DetailsComponent } from './details/details.component';
 import { ResultTableComponent } from './result-table/result-table.component';
 import { RouterService } from 'src/app/service/router.service';
+import { MatSpinner } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { RouterService } from 'src/app/service/router.service';
     HttpClientModule
   ],
   providers: [RouterService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [MatSpinner]
 })
 export class AppModule { }
