@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-xxl">
   <router-outlet></router-outlet>
 </div>
-
-<!-- 
-<mat-progress-spinner [color]="'primary'" [mode]="'indeterminate'"></mat-progress-spinner> -->
+<button #buttonTop mat-button class="btn-back-top" [ngClass]="{'hide': showScrollTop()}" (click)="backToTop()">
+  <mat-icon>expand_less</mat-icon><span>Back to Top</span>
+</button>

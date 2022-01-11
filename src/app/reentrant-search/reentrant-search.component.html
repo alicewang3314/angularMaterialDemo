@@ -3,7 +3,7 @@
 </h2>
 <mat-card>
   <form [formGroup]="reentrantSearch" (ngSubmit)="onSubmit()">
-    <ng-container *ngIf="showHideBtn"> 
+    <ng-container *ngIf="showHideBtn">
       <h3>
         Individual Reentrat Search
       </h3>
@@ -82,10 +82,16 @@
     </div>
 
     <div class="btn-group">
-      <button mat-button type="reset" (click)="reentrantSearch.reset()">Clear</button>
+      <button mat-button type="reset" (click)="reentrantSearch.reset()">
+        <mat-icon>refresh</mat-icon><span>Clear</span>
+      </button>
       <div>
-        <button mat-button type="submit" *ngIf="hideBtn" (click)="onHide.emit()">Hide Filters</button>
-        <button mat-button type="submit" [disabled]="reentrantSearch.pristine">Search</button>
+        <button mat-button type="submit" *ngIf="hideBtn" (click)="onHide.emit()">
+          <mat-icon>unfold_less</mat-icon><span>Hide Filters</span>
+        </button>
+        <button mat-button type="submit" [disabled]="reentrantSearch.pristine">
+          <mat-icon>search</mat-icon><span>Search</span>
+        </button>
       </div>
     </div>
   </form>

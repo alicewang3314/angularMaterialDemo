@@ -1,4 +1,4 @@
-.container {
+.container-xxl {
   padding-top: 30px;
   padding-bottom: 40px;
 }
@@ -6,4 +6,19 @@
 ::ng-deep.cdk-overlay-container {
   background: #000;
   opacity: 0.75 !important;
+}
+
+
+.btn-back-top {
+  color: orange;
+  opacity: 0.7;
+  display: block;
+  float: right;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  &.hide {
+    display: none;
+  }
 }

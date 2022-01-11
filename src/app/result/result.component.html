@@ -8,7 +8,10 @@
       <p class="description">At least one field is required.</p>
     </mat-card-subtitle>
     <div class="card-header-btn-group">
-      <button mat-button *ngIf="!showFilters" (click)="showFilters = !showFilters">View Fiters</button>
+      <button mat-button *ngIf="!showFilters" (click)="showFilters = !showFilters">
+        <mat-icon>unfold_more</mat-icon>
+        <span>View Fiters</span>
+      </button>
     </div>
   </mat-card-header>
   <mat-card-content *ngIf="showFilters">
@@ -25,8 +28,12 @@
       Search results are limited to 500 records. Please enter additional criteria to narrow your search.
     </mat-card-subtitle>
     <div class="card-header-btn-group">
-      <button mat-button (click)="view='table'" [class.active]="isActive('table')">Table</button>
-      <button mat-button (click)="view='tile'" [class.active]="isActive('tile')">Tile</button>
+      <button mat-button (click)="view='table'" [class.active]="isActive('table')">
+        <mat-icon>table_chart</mat-icon><span>Table</span>
+      </button>
+      <button mat-button (click)="view='tile'" [class.active]="isActive('tile')">
+        <mat-icon>view_comfy</mat-icon><span>Tile</span>
+      </button>
     </div>
   </mat-card-header>
   <mat-card-content>

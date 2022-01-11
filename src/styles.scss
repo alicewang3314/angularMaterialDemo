@@ -102,3 +102,13 @@ input[type=number] {
   /* Microsoft Edge */
   color: grey !important;
 }
+
+
+.text-center {
+  text-align: center !important;
+}
+
+$container-max-widths: (sm: 90%,
+  md: 85%,
+  lg: 960px,
+  xl: 1140px) !default;

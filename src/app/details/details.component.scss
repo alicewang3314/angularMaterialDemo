@@ -67,11 +67,25 @@ ul {
   }
 }
 
-::ng-deep.mat-tab-body-content {
-  overflow: hidden !important;
+
+
+
+::ng-deep {
+  .mat-tab-body-wrapper {
+    padding-top: 15px;
+  }
+
+  .mat-tab-body-content {
+    overflow: hidden !important;
+  }
 }
 
 
-::ng-deep.mat-tab-body-wrapper {
-  padding-top: 15px;
+.checkbox-icon {
+  vertical-align: bottom;
+  margin-right: 8px;
+}
+
+.sub-header {
+  padding-left: 2rem;
 }

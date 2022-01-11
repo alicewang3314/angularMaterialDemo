@@ -60,7 +60,7 @@ export class DetailsComponent implements OnInit {
       "Suicide Attempt History",
       "Domestic Violence"
     ],
-    'houHousingsing': [
+    'Housingsing': [
       "Escape Risk List",
       "Housing Concerns",
       "Temporary Hold In",
@@ -72,6 +72,15 @@ export class DetailsComponent implements OnInit {
       "Domestic Violence Protocol"
     ]
   };
+
+  caseAssignment = [
+    'Conselor',
+    'Unit Manager',
+    'Institutional Parole Supervisor',
+    'Institutional Parole Agent',
+    'Field Supervisor',
+    'Field Agent'
+  ];
 
   offenderDetails: any = {};
 
