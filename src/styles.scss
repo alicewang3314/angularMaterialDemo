@@ -108,7 +108,20 @@ input[type=number] {
   text-align: center !important;
 }
 
-$container-max-widths: (sm: 90%,
-  md: 85%,
-  lg: 960px,
-  xl: 1140px) !default;
+button:disabled,
+[type=button]:disabled,
+[type=reset]:disabled,
+[type=submit]:disabled {
+  cursor: not-allowed !important;
+  color: grey;
+}
+
+
+// button:not(:disabled),
+// [type=button]:not(:disabled),
+// [type=reset]:not(:disabled),
+// [type=submit]:not(:disabled) {
+//   cursor: pointer;
+//   background-color: orange;
+//   color: white;
+// }

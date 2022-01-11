@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterContentInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-reentrant-search',
@@ -21,7 +21,7 @@ export class ReentrantSearchComponent implements OnInit, AfterContentInit {
   @Input('showHideBtn') hideBtn: boolean = false;
   @Output('onHide') onHide: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
   }
@@ -38,7 +38,7 @@ export class ReentrantSearchComponent implements OnInit, AfterContentInit {
   }
 
   onSubmit() {
-    console.log(this.reentrantSearch.value)
+    this._router.navigateByUrl('/results');
   }
 }
 

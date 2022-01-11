@@ -28,3 +28,13 @@
 .mat-button[disabled][disabled] {
   color: rgb(169, 169, 169);
 }
+
+::ng-deep .mat-form-field-label {
+  /*change color of label*/
+  color: orange !important;
+}
+
+
+mat-datepicker-toggle {
+  color: orange !important;
+}
