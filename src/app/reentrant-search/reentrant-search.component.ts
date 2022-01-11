@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterContentInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { TooltipPosition } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-reentrant-search',
@@ -20,6 +21,7 @@ export class ReentrantSearchComponent implements OnInit, AfterContentInit {
   });
   @Input('showHideBtn') hideBtn: boolean = false;
   @Output('onHide') onHide: EventEmitter<boolean> = new EventEmitter();
+  // tooltipPosi: Too
 
   constructor(private _router: Router) { }
 
