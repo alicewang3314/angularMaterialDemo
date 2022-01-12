@@ -37,7 +37,7 @@
     </div>
   </mat-card-header>
   <mat-card-content>
-    Filterd Results: {{data.Length}}
+    <b style="color: orange">Filterd Results: {{data.length}}</b>
     <app-result-grid-view *ngIf="view === 'tile'" [data]="data"></app-result-grid-view>
     <app-result-table *ngIf="view === 'table'" [data]="data"></app-result-table>
   </mat-card-content>

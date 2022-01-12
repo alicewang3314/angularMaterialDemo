@@ -20,8 +20,6 @@ export class ResultComponent implements OnInit {
   ngOnInit() {
   }
 
-  
-
   isActive(name: string) {
     return this.view === name;
   }
