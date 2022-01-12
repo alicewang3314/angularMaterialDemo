@@ -14,5 +14,6 @@
     </button>
   </mat-form-field>
   <mat-paginator #paginator [length]="length" [pageSize]="1" [hidePageSize]="true" [showFirstLastButtons]="true"
-    (page)="pageEvent = refreshPage($event)"></mat-paginator>
+    (page)="refreshPage($event)"></mat-paginator>
+  <!-- (page)="pageEvent = refreshPage($event)"></mat-paginator> -->
 </div>
