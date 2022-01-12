@@ -18,10 +18,20 @@ export class DetailsComponent implements OnInit {
     'Phone#',
     'Cell#'
   ];
+  personalInfoData = {
+    'Address Line 1': '128 E AZALEA DR',
+    'Address Line 2': '',
+    'City': 'Harrisburg',
+    'State': 'PA',
+    'Zip + 4': '17110',
+    'Phone#': '',
+    'Cell#': ''
+  };
+
   employerInfo = [
     "Address Line 1",
     "Address Line 2",
-    " City:",
+    "City:",
     "State",
     "Zip + 4",
     " Employer",
@@ -46,6 +56,18 @@ export class DetailsComponent implements OnInit {
     "Sending State(s)",
     "Receiving State"
   ];
+
+  supervisionData = {
+    'PBPP Status Code': '43 - Maximum Expiration',
+    'Status Code Date': '07/10/2020',
+    'Last Contact Date': '06/12/2018',
+    'PBPP Fees Due': '0.00',
+    'Curfew': 'No',
+    'GPS': 'No',
+    'AOD Level': 'MEDIUM',
+    'Sending State(s)': 'PA',
+    'Receiving State': 'New Jersey'
+  };
 
   problemAreas = {
     'Behavior': [
@@ -83,6 +105,30 @@ export class DetailsComponent implements OnInit {
     'Field Supervisor',
     'Field Agent'
   ];
+
+  centencingData = {
+    'Offense Code': ' CS13A19',
+    "Offenses(s')": ' DRUG - PURCHASE OR RECEIVE IN COMMERCE',
+    'Committing County': ' DAUPHIN',
+    'Controlling Min Date': ' 04/09/2017',
+    'RRRI Min Date': ' 04 / 09 / 2017',
+    'True Min Date': '10 / 10 / 2017',
+    'Controlling Max Date': ' 07 / 10 / 2020',
+    'Recomputed PV Max Date': '',
+    'RRRI': 'Certified',
+    'Philadelphia Photo Number': '',
+    'DOC Status': 'PAROLED',
+    'Probation Max Date': '',
+    'Parole Docket': '',
+    'Docket Status': '',
+    'Interview Type': '',
+    'Constructive Parole': '',
+    'Rebuttable': '',
+    'Released From': 'CAMP HILL',
+    'Released Date': '03 / 27 / 2018',
+    'RHU Status': '',
+    'Length Of Stay': '',
+  }
 
   offenderDetails: any = {};
 
