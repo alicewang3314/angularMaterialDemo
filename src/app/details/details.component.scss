@@ -110,3 +110,7 @@ ul {
 ::ng-deep.mat-dialog-container {
   background: rgba(255, 255, 255, 0.954) !important;
 }
+
+::ng-deep.mat-tab-body {
+  background-color: rgb(16, 16, 16);
+}

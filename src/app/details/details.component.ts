@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CacheService } from 'src/app/service/cache.service';
-import { MatDialog } from '@angular/material/dialog'
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -85,16 +86,20 @@ export class DetailsComponent implements OnInit {
 
   offenderDetails: any = {};
 
-  constructor(private cache: CacheService, public dialog: MatDialog) { }
+  constructor(private cache: CacheService, public dialog: MatDialog, private router: Router) { }
 
   openDialog() {
-    this.dialog.open(MorePholotDialog, { 
+    this.dialog.open(MorePholotDialog, {
       backdropClass: 'back-drop',
-      panelClass: 'more-photos' });
+      panelClass: 'more-photos'
+    });
   }
   ngOnInit() {
     this.offenderDetails = this.cache.seletedReentrant;
-    console.log(this.offenderDetails)
+  }
+
+  showResults() {
+    this.router.navigateByUrl('/results');
   }
 }
 
