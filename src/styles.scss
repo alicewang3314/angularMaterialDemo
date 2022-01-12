@@ -59,6 +59,12 @@ body {
   border: 2px !important;
 }
 
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: orange !important;
+}
+
+
 .mat-radio-outer-circle {
   background-color: white !important;
 }
@@ -137,3 +143,4 @@ button:disabled,
     cursor: not-allowed;
   }
 }
+

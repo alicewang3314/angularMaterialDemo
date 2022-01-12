@@ -58,10 +58,16 @@ mat-datepicker-toggle {
 ::ng-deep {
 
   .mat-select-arrow {
-    color: te !important;
+    color: orange !important;
   }
 
   .mat-select-value-text {
     color: white !important;
   }
+}
+
+
+// mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: orange !important;
 }
