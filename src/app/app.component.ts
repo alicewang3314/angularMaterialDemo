@@ -13,10 +13,8 @@ export class AppComponent {
   offsetY = 0;
 
   @ViewChild('buttonTop', { static: true }) scrollTopButton: ElementRef;
-  @HostListener('window:scroll', ['$event']) onWindowScroll() {
-    console.log(window.scrollY, document.documentElement.scrollTop
-      , document.body.scrollTop)
-
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event): void {
     this.offsetY = window.scrollY;
   }
 
