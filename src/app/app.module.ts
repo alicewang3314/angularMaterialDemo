@@ -11,7 +11,7 @@ import { ReentrantSearchComponent } from './reentrant-search/reentrant-search.co
 import { ResultGridViewComponent } from './result-grid-view/result-grid-view.component';
 import { ResultComponent } from './result/result.component';
 import { FlipCardComponent } from './flip-card/flip-card.component';
-import { DetailsComponent } from './details/details.component';
+import { DetailsComponent, MorePholotDialog } from './details/details.component';
 import { ResultTableComponent } from './result-table/result-table.component';
 import { RouterService } from 'src/app/service/router.service';
 import { MatSpinner } from '@angular/material/progress-spinner';
@@ -24,7 +24,8 @@ import { MatSpinner } from '@angular/material/progress-spinner';
     ResultComponent,
     FlipCardComponent,
     DetailsComponent,
-    ResultTableComponent
+    ResultTableComponent,
+    MorePholotDialog
   ],
   imports: [
     BrowserModule,
@@ -37,6 +38,6 @@ import { MatSpinner } from '@angular/material/progress-spinner';
   ],
   providers: [RouterService],
   bootstrap: [AppComponent],
-  entryComponents: [MatSpinner]
+  entryComponents: [MatSpinner, MorePholotDialog]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CacheService } from 'src/app/service/cache.service';
+import { MatDialog } from '@angular/material/dialog'
 
 @Component({
   selector: 'app-details',
@@ -84,10 +85,22 @@ export class DetailsComponent implements OnInit {
 
   offenderDetails: any = {};
 
-  constructor(private cache: CacheService) { }
+  constructor(private cache: CacheService, public dialog: MatDialog) { }
 
+  openDialog() {
+    this.dialog.open(MorePholotDialog, { 
+      backdropClass: 'back-drop',
+      panelClass: 'more-photos' });
+  }
   ngOnInit() {
     this.offenderDetails = this.cache.seletedReentrant;
     console.log(this.offenderDetails)
   }
 }
+
+
+@Component({
+  selector: 'more-photo',
+  templateUrl: './more-photo.component.html'
+})
+export class MorePholotDialog { }

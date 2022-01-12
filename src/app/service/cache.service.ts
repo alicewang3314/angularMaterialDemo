@@ -8,10 +8,19 @@ export class CacheService {
 
   set seletedReentrant(val: any) {
     this._seletedReentrant = val;
+    localStorage.setItem('selected', JSON.stringify(val));
   }
 
   get seletedReentrant() {
-    return this._seletedReentrant;
+    if (this._seletedReentrant) {
+      return this._seletedReentrant;
+    }
+
+    const fromCache = localStorage.getItem('selected');
+    if (fromCache) {
+      return JSON.parse(fromCache)
+    }
+    return null;
   }
 
   constructor() { }
