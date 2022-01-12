@@ -1,9 +1,9 @@
-<h2 *ngIf="showHideBtn">
+<h2 *ngIf="!hideBtn">
   <mat-icon>search</mat-icon> Reentrant search
 </h2>
 <mat-card>
   <form [formGroup]="reentrantSearch" (ngSubmit)="onSubmit()">
-    <ng-container *ngIf="showHideBtn">
+    <ng-container *ngIf="!hideBtn">
       <h3>
         Individual Reentrat Search
       </h3>

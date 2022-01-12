@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { ReentrantSearchComponent } from './reentrant-search/reentrant-search.component';
 import { ResultGridViewComponent } from './result-grid-view/result-grid-view.component';
 import { ResultComponent } from './result/result.component';
-import { FlipCardComponent } from './reentrant-search/flip-card/flip-card.component';
+import { FlipCardComponent } from './flip-card/flip-card.component';
 import { DetailsComponent, MorePholotDialog } from './details/details.component';
 import { ResultTableComponent } from './result-table/result-table.component';
 import { RouterService } from 'src/app/service/router.service';
