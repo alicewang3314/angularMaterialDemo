@@ -5,8 +5,8 @@
   <div class="quick-search">
     Quick Reentrant search
     <mat-form-field appearance="outline">
-      <input matInput placeholder="Type a SID#, DOC#, PBPP#, ICOTS#, FBI# or Phill. Photo Id#.">
-      <button matSuffix mat-icon-button aria-label="search" (click)="showResults()">
+      <input matInput #search placeholder="Type a SID#, DOC#, PBPP#, ICOTS#, FBI# or Phill. Photo Id#.">
+      <button matSuffix mat-icon-button aria-label="search" [disabled]="search.value === ''" (click)="showResults()">
         <mat-icon>search</mat-icon>
       </button>
     </mat-form-field>

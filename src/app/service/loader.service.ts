@@ -14,7 +14,7 @@ export class LoaderService {
 
   set isLoading(val) {
     this._isLoading.next(val);
-    setTimeout(() => { this._isLoading.next(false) }, 900);
+    setTimeout(() => { this._isLoading.next(false) }, 800);
   }
 
   private createOverlayRef() {

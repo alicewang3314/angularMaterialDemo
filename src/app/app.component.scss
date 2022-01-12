@@ -3,7 +3,7 @@
   padding-bottom: 40px;
 }
 
-::ng-deep.cdk-overlay-container {
+::ng-deep.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
   background: #000;
   opacity: 0.85;
 }
