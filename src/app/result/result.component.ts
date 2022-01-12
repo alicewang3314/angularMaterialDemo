@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class ResultComponent implements OnInit {
   data: any[] = [];
-  view: 'table' | 'tile' = 'table';
+  view: 'table' | 'tile' = 'tile';
   showfilters = false;
   
   constructor(private http: HttpClient) {

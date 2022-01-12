@@ -10,7 +10,7 @@
   <mat-form-field appearance="outline" class="paginator-jump-to">
     <input type="number" matInput placeholder="Go to page" [(ngModel)]="goToPage">
     <button *ngIf="goToPage" matSuffix mat-icon-button aria-label="visit page" (click)="jumpToPage(goToPage)">
-      <mat-icon>close</mat-icon>
+      <mat-icon>keyboard_return</mat-icon>
     </button>
   </mat-form-field>
   <mat-paginator #paginator [length]="length" [pageSize]="1" [hidePageSize]="true" [showFirstLastButtons]="true"

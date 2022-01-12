@@ -140,6 +140,10 @@ export class DetailsComponent implements OnInit {
       panelClass: 'more-photos'
     });
   }
+
+  backToSearch() {
+    this.router.navigateByUrl('/search');
+  }
   ngOnInit() {
     this.offenderDetails = this.cache.seletedReentrant;
   }
