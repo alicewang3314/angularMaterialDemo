@@ -13,6 +13,17 @@
 .btn-group {
   display: flex;
   justify-content: space-between;
+
+  button {
+    font-weight: bolder;
+    background-color: orange;
+    color: white;
+
+    &:disabled {
+      background-color: grey;
+      cursor: not-allowed;
+    }
+  }
 }
 
 .mat-card {
@@ -26,7 +37,7 @@
 }
 
 .mat-button[disabled][disabled] {
-  color: rgb(169, 169, 169);
+  color: rgb(213, 213, 213);
 }
 
 ::ng-deep .mat-form-field-label {
@@ -47,7 +58,7 @@ mat-datepicker-toggle {
 ::ng-deep {
 
   .mat-select-arrow {
-    color: orange !important;
+    color: te !important;
   }
 
   .mat-select-value-text {

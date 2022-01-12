@@ -126,4 +126,14 @@ button:disabled,
 //   color: white;
 // }
 
+.custom-btn {
+  height: 37px;
+  background-color: rgb(238, 155, 0) !important;
+  color: white;
 
+  &:disabled {
+    color: rgb(225, 222, 222);
+    background-color: grey;
+    cursor: not-allowed;
+  }
+}

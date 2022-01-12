@@ -7,12 +7,10 @@
     <mat-card-subtitle>
       <p class="description">At least one field is required.</p>
     </mat-card-subtitle>
-    <div class="card-header-btn-group">
-      <button mat-button *ngIf="!showFilters" (click)="showFilters = !showFilters">
-        <mat-icon>unfold_more</mat-icon>
-        <span>View Fiters</span>
-      </button>
-    </div>
+    <button mat-button class="custom-btn" *ngIf="!showFilters" (click)="showFilters = !showFilters">
+      <mat-icon>unfold_more</mat-icon>
+      <span>View Fiters</span>
+    </button>
   </mat-card-header>
   <mat-card-content *ngIf="showFilters">
     <app-reentrant-search [showHideBtn]="true" (onHide)="showFilters = false"></app-reentrant-search>

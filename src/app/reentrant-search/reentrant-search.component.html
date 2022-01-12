@@ -88,7 +88,7 @@
       <div>
         <button mat-button type="submit" *ngIf="hideBtn" (click)="onHide.emit()">
           <mat-icon>unfold_less</mat-icon><span>Hide Filters</span>
-        </button>
+        </button> &nbsp;
         <span matTooltip="At leat one field is required." [matTooltipPosition]="'above'"
           [matTooltipDisabled]="!reentrantSearch.pristine" matTooltipClass="tooltip-error">
           <button mat-button type="submit" [disabled]="reentrantSearch.pristine">
