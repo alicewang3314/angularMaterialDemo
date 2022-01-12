@@ -76,6 +76,11 @@
   }
 }
 
+.supervision {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 ul {
   list-style: none;
 
@@ -113,4 +118,9 @@ ul {
 
 ::ng-deep.mat-tab-body {
   background-color: rgb(16, 16, 16);
+}
+
+.space-align {
+  display: flex;
+  justify-content: space-between;
 }

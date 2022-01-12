@@ -107,8 +107,8 @@ export class DetailsComponent implements OnInit {
   ];
 
   centencingData = {
-    'Offense Code': ' CS13A19',
-    "Offenses(s')": ' DRUG - PURCHASE OR RECEIVE IN COMMERCE',
+    'Offense Code': 'CS13A19',
+    "Offenses(s')": 'DRUG - PURCHASE OR RECEIVE IN COMMERCE',
     'Committing County': ' DAUPHIN',
     'Controlling Min Date': ' 04/09/2017',
     'RRRI Min Date': ' 04 / 09 / 2017',
