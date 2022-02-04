@@ -15,6 +15,13 @@ import { DetailsComponent, MorePholotDialog } from './details/details.component'
 import { ResultTableComponent } from './result-table/result-table.component';
 import { RouterService } from 'src/app/service/router.service';
 import { MatSpinner } from '@angular/material/progress-spinner';
+import { AddButtonComponent } from './components/add-button/add-button.component';
+import { SingleSelectDropdownComponent } from './components/single-select-dropdown/single-select-dropdown.component';
+import { MultiSelectDropdownComponent } from './components/multi-select-dropdown/multi-select-dropdown.component';
+import { SwitchButtonComponent } from './components/switch-button/switch-button.component';
+import { TilesComponent } from './components/tiles/tiles.component';
+import { LargeTilesComponent } from './components/large-tiles/large-tiles.component';
+import { ComponentsDisplayComponent } from './components-display/components-display.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,14 @@ import { MatSpinner } from '@angular/material/progress-spinner';
     FlipCardComponent,
     DetailsComponent,
     ResultTableComponent,
-    MorePholotDialog
+    MorePholotDialog,
+    AddButtonComponent,
+    SingleSelectDropdownComponent,
+    MultiSelectDropdownComponent,
+    SwitchButtonComponent,
+    TilesComponent,
+    LargeTilesComponent,
+    ComponentsDisplayComponent
   ],
   imports: [
     BrowserModule,
