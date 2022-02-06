@@ -1,1 +1,11 @@
-<p>single-select-dropdown works!</p>
+<div>
+  <h5 class="white">Race </h5>
+  <mat-form-field appearance="outline">
+    <mat-select formControlName="race" placeholder="Select One" (selectionChange)="resetDropdown">
+      <input matInput class="dropdown_filter" placeholder="Search" (keyup)="filterDropdown($event.target.value)">
+      <mat-option *ngFor="let race of races" [value]="race">
+        {{race}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

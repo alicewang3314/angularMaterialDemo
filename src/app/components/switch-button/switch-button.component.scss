@@ -1,0 +1,18 @@
+::ng-deep {
+  &.mat-slide-toggle-bar {
+    background-color: #e7dfdf61;
+  }
+
+  &.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: whitesmoke;
+  }
+
+  &.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: green;
+  }
+}
+
+.switch-text {
+  padding-right: 6px;
+  vertical-align: text-bottom;
+}

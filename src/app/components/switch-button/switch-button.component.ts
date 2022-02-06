@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-switch-button',
+  selector: 'switch-button',
   templateUrl: './switch-button.component.html',
   styleUrls: ['./switch-button.component.scss']
 })
