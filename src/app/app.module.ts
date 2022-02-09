@@ -22,6 +22,7 @@ import { SwitchButtonComponent } from './components/switch-button/switch-button.
 import { TilesComponent } from './components/tiles/tiles.component';
 import { LargeTilesComponent } from './components/large-tiles/large-tiles.component';
 import { ComponentsDisplayComponent } from './components-display/components-display.component';
+import { CheckBoxComponent } from './components/check-box/check-box.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ComponentsDisplayComponent } from './components-display/components-disp
     SwitchButtonComponent,
     TilesComponent,
     LargeTilesComponent,
-    ComponentsDisplayComponent
+    ComponentsDisplayComponent,
+    CheckBoxComponent
   ],
   imports: [
     BrowserModule,

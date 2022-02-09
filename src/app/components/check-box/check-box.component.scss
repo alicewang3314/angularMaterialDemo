@@ -1,0 +1,38 @@
+* {
+  color: white;
+  margin-right: 35px;
+}
+
+:host ::ng-deep {
+  &.mat-primary {
+    &.mat-checkbox-checked .mat-checkbox-background {
+      background-color: rgb(255, 140, 0);
+    }
+
+    .mat-checkbox-background {
+      background-color: grey;
+    }
+  }
+
+
+
+  &.mat-accent {
+    &.mat-checkbox-checked .mat-checkbox-background {
+      background-color: rgb(255, 140, 0);
+    }
+
+    .mat-checkbox-background {
+      background-color: grey;
+    }
+  }
+
+  &.mat-warn {
+    &.mat-checkbox-checked .mat-checkbox-background {
+      background-color: rgb(255, 140, 0);
+    }
+
+    .mat-checkbox-background {
+      background-color: grey;
+    }
+  }
+}
