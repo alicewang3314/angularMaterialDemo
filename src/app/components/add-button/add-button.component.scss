@@ -10,12 +10,13 @@
     justify-content: center;
     align-items: center;
   }
+}
 
-  &.material-icons {
-    font-weight: 900;
-    font-size: 55px;
-    height: 55px;
-    width: 55px;
-    color: white;
-  }
+
+.mat-icon {
+  font-weight: 900;
+  font-size: 55px;
+  height: 55px;
+  width: 55px;
+  color: white;
 }

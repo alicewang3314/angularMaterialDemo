@@ -11,5 +11,4 @@ export class ComponentsDisplayComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

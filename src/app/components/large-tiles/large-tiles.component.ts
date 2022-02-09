@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-large-tiles',
+  selector: 'large-tiles',
   templateUrl: './large-tiles.component.html',
   styleUrls: ['./large-tiles.component.scss']
 })
 export class LargeTilesComponent implements OnInit {
-
+  html = 'html'
   constructor() { }
 
   ngOnInit() {
