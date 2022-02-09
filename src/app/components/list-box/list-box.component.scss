@@ -1,0 +1,29 @@
+* {
+  color: white;
+}
+
+
+.list-box_header {
+  font-size: 1.5em;
+}
+
+.list-box {
+  background-color: rgb(26, 26, 26);
+  color: white;
+
+  &_item {
+
+    color: white;
+
+    &-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &_icon-button {
+      color: red;
+      font-weight: 600;
+    }
+  }
+}

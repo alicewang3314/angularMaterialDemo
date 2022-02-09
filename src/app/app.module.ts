@@ -24,6 +24,7 @@ import { LargeTilesComponent } from './components/large-tiles/large-tiles.compon
 import { ComponentsDisplayComponent } from './components-display/components-display.component';
 import { CheckBoxComponent } from './components/check-box/check-box.component';
 import { RadioButtonComponent } from './components/radio-button/radio-button.component';
+import { ListBoxComponent } from './components/list-box/list-box.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { RadioButtonComponent } from './components/radio-button/radio-button.com
     LargeTilesComponent,
     ComponentsDisplayComponent,
     CheckBoxComponent,
-    RadioButtonComponent
+    RadioButtonComponent,
+    ListBoxComponent
   ],
   imports: [
     BrowserModule,
