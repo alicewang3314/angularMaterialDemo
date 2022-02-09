@@ -22,9 +22,12 @@
   .footer {
     display: flex;
     justify-content: space-between;
-    
+   
     .mat-flat-button {
       border-radius: 17px;
+      line-height: 28px;
+      min-width: 55px;
+      background-color: rgb(205, 205, 205);
     }
   }
 }
