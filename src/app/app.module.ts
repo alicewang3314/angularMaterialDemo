@@ -26,6 +26,8 @@ import { CheckBoxComponent } from './components/check-box/check-box.component';
 import { RadioButtonComponent } from './components/radio-button/radio-button.component';
 import { ListBoxComponent } from './components/list-box/list-box.component';
 import { AccordionsComponent } from './components/accordions/accordions.component';
+import { ModalWindowsComponent } from './components/modal-windows/modal-windows.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { AccordionsComponent } from './components/accordions/accordions.componen
     CheckBoxComponent,
     RadioButtonComponent,
     ListBoxComponent,
-    AccordionsComponent
+    AccordionsComponent,
+    ModalWindowsComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,6 @@ import { AccordionsComponent } from './components/accordions/accordions.componen
   ],
   providers: [RouterService],
   bootstrap: [AppComponent],
-  entryComponents: [MatSpinner, MorePholotDialog]
+  entryComponents: [MatSpinner, MorePholotDialog, ModalWindowsComponent]
 })
 export class AppModule { }

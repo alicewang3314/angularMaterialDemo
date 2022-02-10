@@ -1,0 +1,13 @@
+::ng-deep {
+  .mat-dialog-container {
+    background-color: rgb(106, 106, 106);
+    color: whitesmoke;
+  }
+
+  .mat-dialog-content {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-block-start: 3px rgb(92, 24, 24) solid;
+    border-block-end: 3px rgb(92, 24, 24) solid;
+  }
+}
