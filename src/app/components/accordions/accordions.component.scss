@@ -1,0 +1,41 @@
+.accordion {
+  color: white;
+
+  &_header {
+    background-color: black !important;
+    color: white;
+    border-radius: 0;
+    border-bottom: 1px orange solid;
+  }
+
+  &_title {
+    color: white;
+    font-weight: 500;
+
+    &-alert {
+      font-weight: 500;
+      color: rgba(255, 68, 0, 0.714);
+    }
+  }
+}
+
+:host ::ng-deep {
+  .mat-expansion-panel-body {
+    background-color: black !important;
+    color: white;
+    border-radius: 0;
+  }
+
+  .mat-accordion>.mat-expansion-panel-spacing {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .mat-expansion-indicator::after {
+    color: white;
+  }
+
+  .mat-expansion-panel-body {
+    padding: 20px 24px 16px;
+  }
+}

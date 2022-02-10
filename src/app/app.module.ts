@@ -25,6 +25,7 @@ import { ComponentsDisplayComponent } from './components-display/components-disp
 import { CheckBoxComponent } from './components/check-box/check-box.component';
 import { RadioButtonComponent } from './components/radio-button/radio-button.component';
 import { ListBoxComponent } from './components/list-box/list-box.component';
+import { AccordionsComponent } from './components/accordions/accordions.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ListBoxComponent } from './components/list-box/list-box.component';
     ComponentsDisplayComponent,
     CheckBoxComponent,
     RadioButtonComponent,
-    ListBoxComponent
+    ListBoxComponent,
+    AccordionsComponent
   ],
   imports: [
     BrowserModule,
