@@ -10,9 +10,9 @@
 .list-box {
   background-color: rgb(26, 26, 26);
   color: white;
+  min-height: 50px;
 
   &_item {
-
     color: white;
 
     &-wrapper {
