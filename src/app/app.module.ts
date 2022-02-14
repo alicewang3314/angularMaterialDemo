@@ -27,6 +27,7 @@ import { RadioButtonComponent } from './components/radio-button/radio-button.com
 import { ListBoxComponent } from './components/list-box/list-box.component';
 import { AccordionsComponent } from './components/accordions/accordions.component';
 import { ModalWindowsComponent } from './components/modal-windows/modal-windows.component';
+import { SigleSelectTriggerDirective } from './components/single-select-dropdown/sigle-select-trigger.directive';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { ModalWindowsComponent } from './components/modal-windows/modal-windows.
     RadioButtonComponent,
     ListBoxComponent,
     AccordionsComponent,
-    ModalWindowsComponent
+    ModalWindowsComponent,
+    SigleSelectTriggerDirective
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,10 @@
 <mat-card class="out-frame">
   <mat-card-title class="header">Singe Select Dropdown</mat-card-title>
   <mat-card-content>
-    <single-select-dropdown></single-select-dropdown>
+    <!-- <single-select-dropdown></single-select-dropdown> -->
+    <button [singleSelectTrigger]="dropdown" color="primary" mat-button>open</button>
+    <single-select-dropdown #dropdown>
+    </single-select-dropdown>
   </mat-card-content>
 </mat-card>
 

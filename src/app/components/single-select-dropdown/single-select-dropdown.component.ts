@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'single-select-dropdown',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleSelectDropdownComponent implements OnInit {
   races = races;
-  
+  @ViewChild(TemplateRef, { static: true }) templateRef: TemplateRef<any>;
+  @Output() dropdownClosed: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -20,10 +23,7 @@ export class SingleSelectDropdownComponent implements OnInit {
   resetDropdown() {
     this.races = races;
   }
-
 }
-
-
 
 const races = [
   'Asian',
