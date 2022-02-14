@@ -18,7 +18,6 @@ import { ReentrantProfile } from 'src/app/types/reentrantProfile'
       transition('back => front', animate('500ms ease-in'))
     ])
   ],
-  // encapsulation: ViewEncapsulation.Emulated
 })
 export class TilesComponent implements OnInit {
   @Input('data') data: ReentrantProfile = undefined;
