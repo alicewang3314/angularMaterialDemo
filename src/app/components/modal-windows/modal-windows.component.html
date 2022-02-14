@@ -1,8 +1,23 @@
-<h3 class="dialog-header"> Delete this Input Flag?</h3>
+<div class="dialog-header">
+  <h3 class="dialog-header_title"> Delete this Input Flag?</h3>
+  <button mat-button class="dialog-header_close-button" [mat-dialog-close]="true">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
 <mat-dialog-content>
   Information will be permanently deleted.
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Delete</button>
-  <button mat-button mat-dialog-close>Keep</button>
+<mat-dialog-actions class="button-wrapper">
+  <button class="delete-button" mat-flat-button mat-dialog-close>
+    <span class="delete-button_icon-wrapper">
+      <mat-icon class=" delete-button_icon">delete</mat-icon>
+    </span>
+    Delete
+  </button>
+  <button class="keep-button" mat-flat-button mat-dialog-close>
+    <span class="keep-button_icon-wrapper">
+      <mat-icon class=" keep-button_icon">thumb_up</mat-icon>
+    </span>
+    Keep
+  </button>
 </mat-dialog-actions>

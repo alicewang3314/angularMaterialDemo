@@ -15,6 +15,9 @@ export class ComponentsDisplayComponent implements OnInit {
   }
 
   open() {
-    this.dialog.open(ModalWindowsComponent);
+    this.dialog.open(ModalWindowsComponent, {
+      width: '37vw',
+      maxWidth: '100vw'
+    });
   }
 }
