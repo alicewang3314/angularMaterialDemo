@@ -1,3 +1,25 @@
 * {
   color: white;
 }
+
+::ng-deep {
+  .mat-radio-button.mat-radio-checked {
+    .mat-radio-inner-circle {
+      border-radius: 0;
+      display: inline-block;
+      transform: rotate(45deg);
+      height: 14px;
+      width: 7px;
+      border-bottom: 3px solid white;
+      border-right: 3px solid white;
+      background-color: transparent;
+      margin-left: 6px;
+      margin-top: 2px;
+    }
+
+    .mat-radio-outer-circle {
+      background-color: rgb(255, 171, 15) !important;
+      border-color: rgb(255, 171, 15) !important;
+    }
+  }
+}
