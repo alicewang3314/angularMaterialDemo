@@ -61,8 +61,6 @@ export class SigleSelectTriggerDirective {
     this.isOpen ? this.destroyDropdown() : this.openDropdown();
   }
 
-  // afterDropdownClosing() { }
-
   private destroyDropdown() {
     if (!this.overlayRef || !this.isOpen) {
       return;

@@ -1,5 +1,5 @@
-<!-- <div> 
- <h5 class="white">Race </h5>
+<!-- <div>
+  <h5 class="white">Race </h5>
   <mat-form-field appearance="outline">
     <mat-select placeholder="Select One" (selectionChange)="resetDropdown">
       <input matInput class="dropdown_filter" placeholder="Search" (keyup)="filterDropdown($event.target.value)">
@@ -8,21 +8,29 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-</div> -->
+</div>
 
-<ng-template>
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select> -->
+
+<!-- <ng-template>
   <div (click)="dropdownClosed.emit()">
-    <!-- <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline">
       <mat-select placeholder="Select One" (selectionChange)="resetDropdown">
         <input matInput class="dropdown_filter" placeholder="Search" (keyup)="filterDropdown($event.target.value)">
         <mat-option *ngFor="let race of races" [value]="race">
           {{race}}
         </mat-option>
       </mat-select>
-    </mat-form-field> -->
+    </mat-form-field>
     
     <li *ngFor="let race of races" [value]="race">
       {{race}}
     </li>
   </div>
-</ng-template>
+</ng-template> -->
