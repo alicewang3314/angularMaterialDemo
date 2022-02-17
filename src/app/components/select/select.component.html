@@ -1,0 +1,14 @@
+<div class="input-wrapper">
+  <div class="input" [class.reqired]="required" #dropReference>
+    <input #input placeholder={{placeholder}} [disabled]="disabled" readonly [value]="displayText"
+      (click)="showDropdown()" (keydown)="onKeyDown($event)" (blur)="onTouched()" autocomplete="off">
+    <button mat-icon-button class="dropdown-arrow" (click)="showDropdown()">
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+  </div>
+  <select-dropdown [reference]="dropReference" #dropdown>
+    <div class="dropdown-options-container">
+      <ng-content select="select-option"></ng-content>
+    </div>
+  </select-dropdown>
+</div>

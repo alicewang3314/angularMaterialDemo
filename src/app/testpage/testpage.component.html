@@ -1,0 +1,14 @@
+<div class="container">
+  <captor-select [required]="true" placeholder="Pick Your Holiday Destination" [(ngModel)]="selectedDestination"
+    #model="ngModel">
+    <select-option key="1" value="Paris"></select-option>
+    <select-option key="2" value="Mauritius"></select-option>
+    <select-option key="3" value="Singapore"></select-option>
+    <select-option key="4" value="Malaysia"></select-option>
+    <select-option key="5" value="Goa"></select-option>
+    <select-option key="6" value="Thailand"></select-option>
+  </captor-select>
+  <!-- <div *ngIf="model.invalid && (model.dirty || model.touched)" style="color: red">
+    <div *ngIf="model.errors.required">Destintation is required.</div>
+  </div> -->
+</div>

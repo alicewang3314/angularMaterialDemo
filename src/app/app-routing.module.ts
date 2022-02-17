@@ -4,9 +4,13 @@ import { ReentrantSearchComponent } from './reentrant-search/reentrant-search.co
 import { ResultComponent } from './result/result.component';
 import { DetailsComponent } from './details/details.component';
 import { ComponentsDisplayComponent } from './components-display/components-display.component';
-
+import { TestpageComponent } from './testpage/testpage.component';
 
 const routes: Routes = [
+  {
+    path: 'test',
+    component: TestpageComponent
+  },
   {
     path: 'search',
     component: ReentrantSearchComponent

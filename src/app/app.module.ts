@@ -27,8 +27,10 @@ import { RadioButtonComponent } from './components/radio-button/radio-button.com
 import { ListBoxComponent } from './components/list-box/list-box.component';
 import { AccordionsComponent } from './components/accordions/accordions.component';
 import { ModalWindowsComponent } from './components/modal-windows/modal-windows.component';
-import { SigleSelectTriggerDirective } from './components/single-select-dropdown/sigle-select-trigger.directive';
-
+import { TestpageComponent } from './testpage/testpage.component';
+import { SelectComponent } from './components/select/select.component';
+import { SelectOptionComponent } from './components/select/select-option/select-option.component';
+import { SelectDropdownComponent } from './components/select/select-dropdown/select-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,10 @@ import { SigleSelectTriggerDirective } from './components/single-select-dropdown
     ListBoxComponent,
     AccordionsComponent,
     ModalWindowsComponent,
-    SigleSelectTriggerDirective
+    TestpageComponent,
+    SelectComponent,
+    SelectOptionComponent,
+    SelectDropdownComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,95 @@
+.input-wrapper {
+  position: relative;
+  min-width: 5.625rem;
+  padding: .5rem 0 1.5rem;
+  width: 30%;
+
+  .input {
+    // position: relative;
+    margin: 0;
+    outline: 0;
+    border: 2px red solid;
+    display: flex;
+    flex-wrap: nowrap;
+
+    input {
+      width: calc(100% - 40px);
+      height: 40px;
+      line-height: 40px;
+      border: none;
+      border-bottom: 1px solid #a8a8a8;
+      text-overflow: ellipsis;
+      white-space: normal;
+      overflow: hidden;
+      color: #323232;
+      margin-top: 4px;
+      padding-bottom: 2px;
+      outline: 0;
+      cursor: pointer;
+      font-size: inherit;
+      margin: 0;
+      color: gray;
+      background-color: transparent;
+      border: 2px solid grey;
+      border-radius: 20px 0 0 21px;
+
+
+      // &:focus {
+      //   border-bottom: 2px solid #0079cc;
+      // }
+
+      &:disabled {
+        cursor: default;
+        color: #93a1aa;
+        border-bottom: solid 1px #93a1aa;
+      }
+
+      &:disabled+.dropdown-arrow {
+        color: #93a1aa;
+      }
+    }
+
+    .dropdown-arrow {
+      // position: absolute;
+      // color: inherit;
+      // right: 0;
+      // bottom: 0;
+      // cursor: pointer;
+      display: inline-block;
+      border: 2px grey solid !important;
+      border-radius: 0 20px 20px 0;
+      border-left: 0px !important;
+    }
+
+    &.required label:after {
+      color: red;
+      content: "*";
+      position: relative;
+      left: 5px;
+      bottom: 5px;
+    }
+  }
+}
+
+.dropdown-options-container {
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .24);
+  display: block;
+  overflow: auto;
+  background-color: black;
+  color: whitesmoke;
+}
+
+
+// ::ng-deep {
+//   .mat-icon-button.mat-button-base.dropdown-arrow {
+//     display: inline-block;
+//     border: 2px grey solid !important;
+//   }
+// }
+
+
+// .dropdown-arrow {
+//   border: 2px grey solid !important;
+// }

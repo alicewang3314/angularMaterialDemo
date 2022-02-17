@@ -1,0 +1,72 @@
+:host {
+  display: block;
+  padding: 0 0.875rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  color: whitesmoke;
+  background-color: rgb(39, 39, 39);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  cursor: pointer;
+  border-top: 1px grey solid;
+  border-left: 1px grey solid;
+  border-right: 1px grey solid;
+
+  &:last-of-type {
+    border-bottom: 1px grey solid;
+    border-radius: 0 0 5px 5px;
+  }
+
+  &:first-of-type {
+    border-radius: 5px 5px 0 0;
+  }
+
+  &.selected {
+    // color: #0079cc;
+    // background-color: #eee;
+    font-weight: bold;
+
+    &:hover,
+    &.active {
+      // background-color: #eee;
+
+      @media screen and (-ms-high-contrast: active) {
+        // background-color: #eee;
+      }
+    }
+  }
+
+  &:hover,
+  &.active {
+    outline: none;
+    // background-color: #eee;
+
+    @media screen and (-ms-high-contrast: active) {
+      // background-color: #eee;
+    }
+  }
+
+  &.disabled {
+    color: #93a1aa;
+    cursor: auto;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: #fff;
+
+      @media screen and (-ms-high-contrast: active) {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.selected-icon {
+  height: 100%;
+  vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
+  font-weight: 900;
+}
