@@ -19,10 +19,21 @@ import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
   ]
 })
 export class SelectComponent implements AfterViewInit {
-  @Input() placeholder: string;
-  @Input() selected: string; //???
-  @Input() required = false;
-  @Input() disabled = false;
+  @Input()
+  placeholder: string;
+
+  @Input()
+  selected: string; //???
+
+  @Input()
+  required = false;
+
+  @Input()
+  disabled = false;
+
+  @Input()
+  isMulti = false;
+
   @ViewChild('input', { static: true }) input: ElementRef;
   @ViewChild(SelectDropdownComponent, { static: true }) dropdown: SelectDropdownComponent;
   @ContentChildren(SelectOptionComponent) options: QueryList<SelectOptionComponent>;

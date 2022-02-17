@@ -19,13 +19,11 @@
     border-radius: 0 0 5px 5px;
   }
 
-  &:first-of-type {
-    border-radius: 5px 5px 0 0;
+  &:hover {
+    background-color: rgb(83, 78, 78);
   }
 
   &.selected {
-    // color: #0079cc;
-    // background-color: #eee;
     font-weight: bold;
 
     &:hover,
@@ -69,4 +67,7 @@
   vertical-align: middle;
   vertical-align: -webkit-baseline-middle;
   font-weight: 900;
+}
+.dropdown-panel {
+  border: 1px red solid;
 }
