@@ -8,20 +8,20 @@
   </div>
   <select-dropdown [reference]="dropReference" #dropdown>
     <div class="multi-select-actions" *ngIf="isMulti">
-      <button mat-button>
+      <button mat-button (click)="selectAll()">
         <mat-icon> check</mat-icon>
         Check All
       </button>
-      <button mat-button>
+      <button mat-button (click)="unselectAll()">
         <mat-icon>close</mat-icon>
         Uncheck All
       </button>
     </div>
     <div class="dropdown-filter_background">
-      <input class="dropdown-filter" placeholder="Search">
+      <input type="text" #filter [ngModel]="filterVal" (ngModelChange)="applyFilter($event)" class="dropdown-filter" placeholder="Search">
     </div>
     <div class="dropdown-options-container">
-      <ng-content select="select-option"></ng-content>
+      <ng-content select="select-option" #content></ng-content>
     </div>
   </select-dropdown>
 </div>

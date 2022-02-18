@@ -12,11 +12,13 @@ export class SelectOptionComponent {
 
   @Input() value: string;
 
-  //?
   @HostBinding('class.selected')
   get selected(): boolean {
-    return this.select.selectedOption === this;
+    console.log(this.select)
+    return this.select.selectedOption === this || this.select.selectedOptionMulti.indexOf(this) !== -1;
   }
+
+  @HostBinding('class.hide') hide = false;
 
   @HostBinding('class.active') active = false;
 
@@ -29,8 +31,14 @@ export class SelectOptionComponent {
 
   private select: SelectComponent;
 
+  setHiding(): void {
+    this.hide = true;
+  }
 
-  // ?? whats for
+  setShowing(): void {
+    this.hide = false;
+  }
+
   setActiveStyles(): void {
     this.active = true;
   }

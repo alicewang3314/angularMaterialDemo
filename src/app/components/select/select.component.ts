@@ -26,6 +26,9 @@ export class SelectComponent implements AfterViewInit {
   selected: string; //???
 
   @Input()
+  selectedMulti: string[];
+
+  @Input()
   required = false;
 
   @Input()
@@ -38,7 +41,9 @@ export class SelectComponent implements AfterViewInit {
   @ViewChild(SelectDropdownComponent, { static: true }) dropdown: SelectDropdownComponent;
   @ContentChildren(SelectOptionComponent) options: QueryList<SelectOptionComponent>;
   selectedOption: SelectOptionComponent;
+  selectedOptionMulti: SelectOptionComponent[] = [];
   displayText: string;
+  filterVal: string;
   onChangeFn = (_: any) => { };// ?
   onTouchedFn = () => { }; //?
   private keyManager: ActiveDescendantKeyManager<SelectOptionComponent>; //?
@@ -55,9 +60,12 @@ export class SelectComponent implements AfterViewInit {
     if (this.options.length === 0) {
       return;
     }
-    this.selected
-      ? this.keyManager.setActiveItem(this.selectedOption)
-      : this.keyManager.setFirstItemActive();
+
+    if (!this.isMulti) {
+      this.selected
+        ? this.keyManager.setActiveItem(this.selectedOption)
+        : this.keyManager.setFirstItemActive();
+    }
   }
 
   hideDropdown() {
@@ -101,14 +109,53 @@ export class SelectComponent implements AfterViewInit {
     }
   }
 
+  applyFilter(query) {
+    if (query != null) {
+      this.options.forEach(option => {
+        if (option.value.toLowerCase().indexOf(query.toLowerCase()) == -1) {
+          option.setHiding();
+        } else {
+          option.setShowing();
+        }
+      });
+
+      return;
+    }
+
+    this.options.forEach(option => option.setShowing());
+  }
+
+  selectAll() {
+    this.options.forEach(option => this.keyManager.setActiveItem(option));
+    this.selectedMulti = this.options.map(option => option.key);
+    this.selectedOptionMulti = this.options.toArray();
+    this.displayText = this.options.map(option => option.value).join();
+    // this.hideDropdown();
+    this.input.nativeElement.focus();
+    this.onChange();
+  }
+
+  unselectAll() {
+    this.selectedMulti = [];
+    this.selectedOptionMulti = [];
+    this.displayText = '';
+    // this.hideDropdown();
+    this.input.nativeElement.focus();
+    this.onChange();
+  }
+
   selectOption(option: SelectOptionComponent) {
-    this.keyManager.setActiveItem(option);
+    this.keyManager.setActiveItem(option);//?
     this.selected = option.key;
     this.selectedOption = option;
     this.displayText = this.selectedOption ? this.selectedOption.value : '';
     this.hideDropdown();
     this.input.nativeElement.focus();
     this.onChange();
+  }
+
+  onChange() { //?
+    this.onChangeFn(this.selected);
   }
 
   registerOnChange(fn: any) { //?
@@ -129,10 +176,6 @@ export class SelectComponent implements AfterViewInit {
 
   onTouched() {
     this.onTouchedFn();
-  }
-
-  onChange() {
-    this.onChangeFn(this.selected);
   }
 
   ngAfterViewInit(): void {

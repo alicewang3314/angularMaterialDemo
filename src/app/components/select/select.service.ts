@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { SelectComponent } from './select.component';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SelectService {
   private select: SelectComponent;
+  private _isMultiSelect = false;
 
   register(select: SelectComponent) {
     this.select = select;
   }
 
-  getSelect() {
+  getSelect(): SelectComponent {
     return this.select;
   }
 

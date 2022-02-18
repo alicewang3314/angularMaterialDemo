@@ -13,52 +13,28 @@
   border-top: 1px grey solid;
   border-left: 1px grey solid;
   border-right: 1px grey solid;
+  transition: 0.4s;
 
   &:last-of-type {
     border-bottom: 1px grey solid;
     border-radius: 0 0 5px 5px;
   }
 
-  &:hover {
-    background-color: rgb(83, 78, 78);
-  }
-
   &.selected {
     font-weight: bold;
-
-    &:hover,
-    &.active {
-      // background-color: #eee;
-
-      @media screen and (-ms-high-contrast: active) {
-        // background-color: #eee;
-      }
-    }
   }
 
   &:hover,
   &.active {
     outline: none;
-    // background-color: #eee;
-
-    @media screen and (-ms-high-contrast: active) {
-      // background-color: #eee;
-    }
   }
 
-  &.disabled {
-    color: #93a1aa;
-    cursor: auto;
+  &:hover {
+    background-color: rgb(83, 78, 78);
+  }
 
-    &:hover,
-    &:focus {
-      outline: none;
-      background-color: #fff;
-
-      @media screen and (-ms-high-contrast: active) {
-        background-color: #fff;
-      }
-    }
+  &.hide {
+    display: none;
   }
 }
 
@@ -68,6 +44,7 @@
   vertical-align: -webkit-baseline-middle;
   font-weight: 900;
 }
+
 .dropdown-panel {
   border: 1px red solid;
 }
