@@ -1,9 +1,10 @@
-import { Component, ContentChildren, ElementRef, forwardRef, QueryList, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ContentChildren, ElementRef, forwardRef, QueryList, Input, OnInit, ViewChild, AfterViewInit, NgZone, ChangeDetectorRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectOptionComponent } from './select-option/select-option.component';
 import { SelectDropdownComponent } from './select-dropdown/select-dropdown.component';
 import { SelectService } from './select.service';
-import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
+import { ActiveDescendantKeyManager, FocusOrigin } from '@angular/cdk/a11y';
+
 
 @Component({
   selector: 'captor-select',
@@ -46,9 +47,18 @@ export class SelectComponent implements AfterViewInit {
   filterVal: string;
   private keyManager: ActiveDescendantKeyManager<SelectOptionComponent>; //?
 
-  constructor(private selectService: SelectService) {
-    this.selectService.register(this);
-  }
+  // subtreeOrigin = this.formatOrigin(null);
+
+
+  // formatOrigin(origin: FocusOrigin) {
+  //   console.log(origin)
+  //   return origin ? origin + 'focus' : 'blurred'
+  // }
+
+  // markForCheck() {
+  //   this._ngZone.run(() => this._cdr.markForCheck());
+  // }
+
 
   showDropdown() {
     this.dropdown.show();
@@ -219,10 +229,7 @@ export class SelectComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     setTimeout(() => {//??
       if (this.isMulti) {
-        console.log(this.selectedMulti)
         this.selectedOptionMulti = this.options.filter(option => this.selectedMulti.indexOf(option.key) !== -1);
-        console.log(this.selectedOptionMulti)
-
         this.displayText = this.selectedOptionMulti === []
           ? ''
           : this.selectedOptionMulti.map(option => option.value).join();
@@ -237,5 +244,12 @@ export class SelectComponent implements AfterViewInit {
       .withHorizontalOrientation('ltr')
       .withVerticalOrientation()
       .withWrap();
+  }
+
+  constructor(
+    private selectService: SelectService,
+    private _ngZone: NgZone,
+    private _cdr: ChangeDetectorRef) {
+    this.selectService.register(this);
   }
 }
