@@ -1,25 +1,30 @@
 <div class="container">
-  <captor-select [required]="true" placeholder="Pick Your Holiday Destination" [(ngModel)]="selectedDestination"
-    #model="ngModel">
-    <select-option key="1" value="Paris"></select-option>
-    <select-option key="2" value="Mauritius"></select-option>
-    <select-option key="3" value="Singapore"></select-option>
-    <select-option key="4" value="Malaysia"></select-option>
-    <select-option key="5" value="Goa"></select-option>
-    <select-option key="6" value="Thailand"></select-option>
+  Single Select
+  <captor-select placeholder="Pick Your Holiday Destination" [(ngModel)]="test">
+    <select-option key="1" value="30 Day Follow Up to Intro"></select-option>
+    <select-option key="2" value="Act of Attendance - In Person Testimony"></select-option>
+    <select-option key="3" value="Act of Attendance - In Person Testimony & Intro"></select-option>
+    <select-option key="4" value="Act of Input - Reg Information & Input Options"></select-option>
+    <select-option key="5" value="Act of Received Input - & Intro Information"></select-option>
+    <select-option key="6" value="placehoder"></select-option>
+    <select-option key="7" value="placehoder"></select-option>
+    <select-option key="8" value="placehoder"></select-option>
   </captor-select>
-  <!-- <div *ngIf="model.invalid && (model.dirty || model.touched)" style="color: red">
-    <div *ngIf="model.errors.required">Destintation is required.</div>
-  </div> -->
 
+  <b>Value:</b> {{test}}
+  <mat-divider style="margin-top: 20px; margin-bottom: 20px;"></mat-divider>
 
-  <captor-select [isMulti]="true" [required]="true" placeholder="Pick Your Holiday Destination" [(ngModel)]="selectedDestination2"
-    #model="ngModel">
-    <select-option key="1" value="Paris"></select-option>
-    <select-option key="2" value="Mauritius"></select-option>
-    <select-option key="3" value="Singapore"></select-option>
-    <select-option key="4" value="Malaysia"></select-option>
-    <select-option key="5" value="Goa"></select-option>
-    <select-option key="6" value="Thailand"></select-option>
+  Multi Select
+  <captor-select [isMulti]="true" placeholder="Pick Your Holiday Destination" [(ngModel)]="testMulti">
+    <select-option key="1" value="30 Day Follow Up to Intro"></select-option>
+    <select-option key="2" value="Act of Attendance - In Person Testimony"></select-option>
+    <select-option key="3" value="Act of Attendance - In Person Testimony & Intro"></select-option>
+    <select-option key="4" value="Act of Input - Reg Information & Input Options"></select-option>
+    <select-option key="5" value="Act of Received Input - & Intro Information"></select-option>
+    <select-option key="6" value="placehoder"></select-option>
+    <select-option key="7" value="placehoder"></select-option>
+    <select-option key="8" value="placehoder"></select-option>
   </captor-select>
+
+  <b>Value:</b> {{testMulti | json}}
 </div>

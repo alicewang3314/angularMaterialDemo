@@ -26,7 +26,7 @@ export class SelectComponent implements AfterViewInit {
   selected: string; //???
 
   @Input()
-  selectedMulti: string[];
+  selectedMulti: string[] = [];
 
   @Input()
   required = false;
@@ -44,8 +44,6 @@ export class SelectComponent implements AfterViewInit {
   selectedOptionMulti: SelectOptionComponent[] = [];
   displayText: string;
   filterVal: string;
-  onChangeFn = (_: any) => { };// ?
-  onTouchedFn = () => { }; //?
   private keyManager: ActiveDescendantKeyManager<SelectOptionComponent>; //?
 
   constructor(private selectService: SelectService) {
@@ -53,9 +51,7 @@ export class SelectComponent implements AfterViewInit {
   }
 
   showDropdown() {
-    // debugger
     this.dropdown.show();
-
 
     if (this.options.length === 0) {
       return;
@@ -117,12 +113,14 @@ export class SelectComponent implements AfterViewInit {
         } else {
           option.setShowing();
         }
+        this.onChange();
       });
 
       return;
     }
 
     this.options.forEach(option => option.setShowing());
+    this.onChange();
   }
 
   selectAll() {
@@ -130,7 +128,6 @@ export class SelectComponent implements AfterViewInit {
     this.selectedMulti = this.options.map(option => option.key);
     this.selectedOptionMulti = this.options.toArray();
     this.displayText = this.options.map(option => option.value).join();
-    // this.hideDropdown();
     this.input.nativeElement.focus();
     this.onChange();
   }
@@ -139,25 +136,50 @@ export class SelectComponent implements AfterViewInit {
     this.selectedMulti = [];
     this.selectedOptionMulti = [];
     this.displayText = '';
-    // this.hideDropdown();
     this.input.nativeElement.focus();
     this.onChange();
   }
 
   selectOption(option: SelectOptionComponent) {
-    this.keyManager.setActiveItem(option);//?
-    this.selected = option.key;
-    this.selectedOption = option;
-    this.displayText = this.selectedOption ? this.selectedOption.value : '';
-    this.hideDropdown();
+    if (!this.isMulti) {
+      this.keyManager.setActiveItem(option);//?
+      this.selected = option.key;
+      this.selectedOption = option;
+      this.displayText = this.selectedOption ? this.selectedOption.value : '';
+      this.hideDropdown();
+    }
+    else {
+      const idx = this.selectedOptionMulti.indexOf(option);
+
+      if (idx !== -1) {
+        this.selectedOptionMulti.splice(idx, 1);
+        const keyIdx = this.selectedMulti.indexOf(option.key);
+        this.selectedMulti.splice(keyIdx, 1);
+        this.displayText = this.selectedOptionMulti.map(option => option.value).join();
+      }
+      else {
+        this.selectedOptionMulti.push(option);
+        this.selectedMulti.push(option.key);
+        this.displayText = this.selectedOptionMulti.map(option => option.value).join();
+      }
+    }
     this.input.nativeElement.focus();
     this.onChange();
   }
 
-  onChange() { //?
-    this.onChangeFn(this.selected);
+  setDisabledState(isDisabled: boolean) {
+    this.disabled = isDisabled;
   }
 
+  /*
+    Implement control value accessor methods:
+    onChange()
+    onTouch()
+    set value(val: any) <= ngmodal name
+    writeValue(value: any)  //Write value to the view if the value changes occur on the model programmatically
+    registerOnChange(fn: any) // cb evoke when value in UI changed
+    regiesterOnTouch(fn: any) // cb when element is touched
+  */
   registerOnChange(fn: any) { //?
     this.onChangeFn = fn;
   }
@@ -166,11 +188,25 @@ export class SelectComponent implements AfterViewInit {
     this.onTouchedFn = fn;
   }
 
-  setDisabledState(isDisabled: boolean) {
-    this.disabled = isDisabled;
+  onChangeFn = (_: any) => { };// ?
+  onTouchedFn = () => { }; //?
+  onChange() {
+    // debugger
+    if (this.isMulti) {
+      this.onChangeFn(this.selectedMulti);
+      return;
+    }
+
+    this.onChangeFn(this.selected);
   }
 
   writeValue(obj: any) {
+    // debugger
+    if (this.isMulti && obj != null) {
+      this.selectedMulti.push(obj);
+      return;
+    }
+
     this.selected = obj;
   }
 
@@ -178,14 +214,28 @@ export class SelectComponent implements AfterViewInit {
     this.onTouchedFn();
   }
 
+  // -- end of control value accessor
+
   ngAfterViewInit(): void {
     setTimeout(() => {//??
-      this.selectedOption = this.options.toArray().find(option => option.key === this.selected);
-      this.displayText = this.selectedOption ? this.selectedOption.value : '';
-      this.keyManager = new ActiveDescendantKeyManager(this.options)
-        .withHorizontalOrientation('ltr')
-        .withVerticalOrientation()
-        .withWrap();
+      if (this.isMulti) {
+        console.log(this.selectedMulti)
+        this.selectedOptionMulti = this.options.filter(option => this.selectedMulti.indexOf(option.key) !== -1);
+        console.log(this.selectedOptionMulti)
+
+        this.displayText = this.selectedOptionMulti === []
+          ? ''
+          : this.selectedOptionMulti.map(option => option.value).join();
+      }
+      else {
+        this.selectedOption = this.options.toArray().find(option => option.key === this.selected);
+        this.displayText = this.selectedOption ? this.selectedOption.value : '';;
+      }
     });
+
+    this.keyManager = new ActiveDescendantKeyManager(this.options)
+      .withHorizontalOrientation('ltr')
+      .withVerticalOrientation()
+      .withWrap();
   }
 }

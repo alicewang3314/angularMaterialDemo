@@ -14,7 +14,6 @@ export class SelectOptionComponent {
 
   @HostBinding('class.selected')
   get selected(): boolean {
-    console.log(this.select)
     return this.select.selectedOption === this || this.select.selectedOptionMulti.indexOf(this) !== -1;
   }
 
