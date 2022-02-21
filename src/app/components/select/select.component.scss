@@ -1,6 +1,6 @@
 .input-wrapper {
   position: relative;
-  min-width: 5.625rem;
+  min-width: 200px;
   padding: .5rem 0 1.5rem;
   width: 30%;
 
@@ -11,8 +11,11 @@
     flex-wrap: nowrap;
 
     &.cdk-focused {
-
       .dropdown-arrow {
+        border-color: orange !important;
+      }
+
+      input {
         border-color: orange !important;
       }
     }
@@ -41,16 +44,7 @@
       &:active,
       &:focus {
         border-color: orange;
-
-        &:host {
-          background-color: red;
-
-          .dropdown-arrow {
-            border-color: orange;
-          }
-        }
       }
-
 
       &:disabled {
         cursor: default;

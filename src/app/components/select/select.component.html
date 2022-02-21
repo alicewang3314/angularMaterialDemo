@@ -2,7 +2,7 @@
   <div class="input" cdkMonitorSubtreeFocus [class.reqired]="required" #dropReference>
     <input #input placeholder={{placeholder}} [disabled]="disabled" readonly [value]="displayText"
       (click)="showDropdown()" (keydown)="onKeyDown($event)" (blur)="onTouched()" autocomplete="off">
-    <button mat-icon-button class="dropdown-arrow" (click)="showDropdown()">
+    <button tabindex="-1" mat-icon-button class="dropdown-arrow" (click)="showDropdown()">
       <mat-icon>arrow_drop_down</mat-icon>
     </button>
     <select-dropdown [reference]="dropReference" #dropdown>

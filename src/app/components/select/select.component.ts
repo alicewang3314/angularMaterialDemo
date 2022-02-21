@@ -39,6 +39,7 @@ export class SelectComponent implements AfterViewInit {
   isMulti = false;
 
   @ViewChild('input', { static: true }) input: ElementRef;
+  @ViewChild('filter', { static: true }) filter: ElementRef;
   @ViewChild(SelectDropdownComponent, { static: true }) dropdown: SelectDropdownComponent;
   @ContentChildren(SelectOptionComponent) options: QueryList<SelectOptionComponent>;
   selectedOption: SelectOptionComponent;
@@ -47,19 +48,6 @@ export class SelectComponent implements AfterViewInit {
   filterVal: string;
   private keyManager: ActiveDescendantKeyManager<SelectOptionComponent>; //?
 
-  // subtreeOrigin = this.formatOrigin(null);
-
-
-  // formatOrigin(origin: FocusOrigin) {
-  //   console.log(origin)
-  //   return origin ? origin + 'focus' : 'blurred'
-  // }
-
-  // markForCheck() {
-  //   this._ngZone.run(() => this._cdr.markForCheck());
-  // }
-
-
   showDropdown() {
     this.dropdown.show();
 
@@ -67,11 +55,15 @@ export class SelectComponent implements AfterViewInit {
       return;
     }
 
-    if (!this.isMulti) {
-      this.selected
-        ? this.keyManager.setActiveItem(this.selectedOption)
-        : this.keyManager.setFirstItemActive();
-    }
+
+
+    // if (!this.isMulti) {
+    //   this.selected
+    //     ? this.keyManager.setActiveItem(this.selectedOption)
+    //     : this.keyManager.setFirstItemActive();
+    // }
+    this.filter.nativeElement.focus();
+    this.keyManager.setFirstItemActive();
   }
 
   hideDropdown() {
@@ -201,7 +193,6 @@ export class SelectComponent implements AfterViewInit {
   onChangeFn = (_: any) => { };// ?
   onTouchedFn = () => { }; //?
   onChange() {
-    // debugger
     if (this.isMulti) {
       this.onChangeFn(this.selectedMulti);
       return;
@@ -211,7 +202,6 @@ export class SelectComponent implements AfterViewInit {
   }
 
   writeValue(obj: any) {
-    // debugger
     if (this.isMulti && obj != null) {
       this.selectedMulti.push(obj);
       return;
@@ -247,9 +237,7 @@ export class SelectComponent implements AfterViewInit {
   }
 
   constructor(
-    private selectService: SelectService,
-    private _ngZone: NgZone,
-    private _cdr: ChangeDetectorRef) {
+    private selectService: SelectService) {
     this.selectService.register(this);
   }
 }
