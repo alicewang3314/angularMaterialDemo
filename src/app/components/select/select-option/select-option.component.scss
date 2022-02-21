@@ -24,6 +24,10 @@
     font-weight: bold;
   }
 
+  &:focus {
+    background-color: red !important;
+  }
+
   &:hover,
   &.active {
     outline: none;

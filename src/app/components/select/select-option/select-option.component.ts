@@ -1,11 +1,13 @@
-import { Component, Input, HostBinding, HostListener } from '@angular/core';
+import { FocusOrigin, FocusMonitor } from '@angular/cdk/a11y';
+import { Component, Input, HostBinding, HostListener, ElementRef, Renderer2 } from '@angular/core';
 import { SelectComponent } from '../select.component';
 import { SelectService } from '../select.service';
 
 @Component({
   selector: 'select-option',
   templateUrl: './select-option.component.html',
-  styleUrls: ['./select-option.component.scss']
+  styleUrls: ['./select-option.component.scss'],
+  host: { tabIndex: '-1' }
 })
 export class SelectOptionComponent {
   @Input() key: string;
@@ -46,7 +48,22 @@ export class SelectOptionComponent {
     this.active = false;
   }
 
-  constructor(private service: SelectService) {
+  scrollDownFocus() {
+    this.element.nativeElement.scrollIntoView(false);
+  }
+
+  scrollUpFocus() {
+    this.element.nativeElement.scrollIntoView();
+  }
+
+  focus(): void {
+    this.element.nativeElement.focus();
+  }
+
+  constructor(
+    private service: SelectService,
+    private element: ElementRef,
+    private _focusMonitor?: FocusMonitor) {
     this.select = this.service.getSelect();
   }
 }

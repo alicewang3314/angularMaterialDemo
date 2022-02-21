@@ -17,7 +17,6 @@ export class SelectDropdownComponent {
   protected overlayRef: OverlayRef;
   public showing = false;
 
-
   show() {
     this.overlayRef = this.overlay.create(this.getOverlayConfig());
     this.overlayRef.attach(this.contentTemplate);

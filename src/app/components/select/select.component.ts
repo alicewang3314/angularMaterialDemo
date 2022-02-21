@@ -1,9 +1,9 @@
-import { Component, ContentChildren, ElementRef, forwardRef, QueryList, Input, OnInit, ViewChild, AfterViewInit, NgZone, ChangeDetectorRef } from '@angular/core';
+import { Component, ContentChildren, ElementRef, forwardRef, QueryList, Input, OnInit, ViewChild, AfterViewInit, NgZone, ChangeDetectorRef, HostListener } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectOptionComponent } from './select-option/select-option.component';
 import { SelectDropdownComponent } from './select-dropdown/select-dropdown.component';
 import { SelectService } from './select.service';
-import { ActiveDescendantKeyManager, FocusOrigin } from '@angular/cdk/a11y';
+import { ActiveDescendantKeyManager, FocusKeyManager } from '@angular/cdk/a11y';
 
 
 @Component({
@@ -46,7 +46,8 @@ export class SelectComponent implements AfterViewInit {
   selectedOptionMulti: SelectOptionComponent[] = [];
   displayText: string;
   filterVal: string;
-  private keyManager: ActiveDescendantKeyManager<SelectOptionComponent>; //?
+  private keyManager: ActiveDescendantKeyManager<SelectOptionComponent>;
+
 
   showDropdown() {
     this.dropdown.show();
@@ -54,16 +55,13 @@ export class SelectComponent implements AfterViewInit {
     if (this.options.length === 0) {
       return;
     }
-
-
-
     // if (!this.isMulti) {
     //   this.selected
     //     ? this.keyManager.setActiveItem(this.selectedOption)
     //     : this.keyManager.setFirstItemActive();
     // }
     this.filter.nativeElement.focus();
-    this.keyManager.setFirstItemActive();
+    // this.keyManager.setFirstItemActive();
   }
 
   hideDropdown() {
@@ -92,17 +90,45 @@ export class SelectComponent implements AfterViewInit {
     }
 
     if (event.key === 'Enter' || event.key === ' ') {
-      this.selectedOption = this.keyManager.activeItem;
-      this.selected = this.selectedOption.key;
-      this.displayText = this.selectedOption ? this.selectedOption.value : '';
+      if (this.isMulti) {
+        this.selectedOptionMulti.push(this.keyManager.activeItem);
+        this.selectedMulti = this.selectedOptionMulti.map(option => option.key);
+        this.displayText = this.selectedOptionMulti.map(option => option.value).join() || '';
+      }
+      else {
+        if (this.selectedOption === this.keyManager.activeItem) {
+          this.selected = undefined;
+          this.selectedOption = undefined;
+          this.displayText = '';
+        }
+        else {
+          this.selectedOption = this.keyManager.activeItem;
+          this.selected = this.selectedOption.key;
+          this.displayText = this.selectedOption ? this.selectedOption.value : '';
+        }
+      }
       this.hideDropdown();
       this.onChange();
-    } else if (event.key === 'Escape' || event.key === 'Esc') {
+    }
+    else if (event.key === 'Escape' || event.key === 'Esc') {
       this.dropdown.showing && this.hideDropdown();
-    } else if (['ArrowUp', 'Up', 'ArrowDown', 'Down', 'ArrowRight', 'Right', 'ArrowLeft', 'Left']
+    }
+    else if (['ArrowUp', 'Up', 'ArrowDown', 'Down', 'ArrowRight', 'Right', 'ArrowLeft', 'Left']
       .indexOf(event.key) > -1) {
+      // todo remove target from search
       this.keyManager.onKeydown(event);
-    } else if (event.key === 'PageUp' || event.key === 'PageDown' || event.key === 'Tab') {
+      //scroll down
+      if (['ArrowDown', 'Down', 'ArrowRight', 'Right']
+        .indexOf(event.key) > -1) {
+          this.keyManager.activeItem.scrollDownFocus();
+      }
+      // scroll up
+      else if (['ArrowUp', 'Up', 'ArrowLeft', 'Left']
+        .indexOf(event.key) > -1) {
+          this.keyManager.activeItem.scrollUpFocus();
+      }
+    }
+    else if (event.key === 'PageUp' || event.key === 'PageDown' || event.key === 'Tab') {
       this.dropdown.showing && event.preventDefault();
     }
   }
@@ -229,6 +255,8 @@ export class SelectComponent implements AfterViewInit {
         this.displayText = this.selectedOption ? this.selectedOption.value : '';;
       }
     });
+
+    // this.keyManager = new FocusKeyManager(this.options).withWrap();
 
     this.keyManager = new ActiveDescendantKeyManager(this.options)
       .withHorizontalOrientation('ltr')
