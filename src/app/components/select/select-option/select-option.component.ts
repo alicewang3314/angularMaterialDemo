@@ -29,9 +29,16 @@ export class SelectOptionComponent {
     this.select.selectOption(this);
   }
 
+  // disabled = false;
+
   private select: SelectComponent;
 
+  get isHided() {
+    return this.hide;
+  }
+
   setHiding(): void {
+    // this.disabled = true;
     this.hide = true;
   }
 

@@ -3,7 +3,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectOptionComponent } from './select-option/select-option.component';
 import { SelectDropdownComponent } from './select-dropdown/select-dropdown.component';
 import { SelectService } from './select.service';
-import { ActiveDescendantKeyManager, FocusKeyManager } from '@angular/cdk/a11y';
+import { ActiveDescendantKeyManager, FocusKeyManager, InteractivityChecker } from '@angular/cdk/a11y';
 
 
 @Component({
@@ -47,9 +47,10 @@ export class SelectComponent implements AfterViewInit {
   displayText: string;
   filterVal: string;
   private keyManager: ActiveDescendantKeyManager<SelectOptionComponent>;
-
+  private activeChecker: InteractivityChecker;
 
   showDropdown() {
+
     this.dropdown.show();
 
     if (this.options.length === 0) {
@@ -72,8 +73,9 @@ export class SelectComponent implements AfterViewInit {
   }
 
   public onKeyDown(event: KeyboardEvent) {
-    if (['Enter', ' ', 'ArrowDown', 'Down', 'ArrowUp', 'Up'].indexOf(event.key) > -1) {
-      if (!this.dropdown.showing) {
+    console.log(event.target)
+    if (['Enter', 'ArrowDown', 'Down', 'ArrowUp', 'Up'].indexOf(event.key) > -1) {
+      if (!this.dropdown.showing && (<HTMLElement>event.target).id !== 'filter') {
         this.showDropdown();
         return;
       }
@@ -84,7 +86,7 @@ export class SelectComponent implements AfterViewInit {
       }
     }
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter') {
       if (this.isMulti) {
         this.selectedOptionMulti.push(this.keyManager.activeItem);
         this.selectedMulti = this.selectedOptionMulti.map(option => option.key);
@@ -127,20 +129,34 @@ export class SelectComponent implements AfterViewInit {
   }
 
   applyFilter(query) {
+    this.keyManager.activeItem && this.keyManager.activeItem.setInactiveStyles();
+
     if (query != null) {
+      const activeOptions = [];
       this.options.forEach(option => {
         if (option.value.toLowerCase().indexOf(query.toLowerCase()) == -1) {
           option.setHiding();
         } else {
           option.setShowing();
+          activeOptions.push(option);
         }
-        this.onChange();
       });
+      // this.keyManager = new ActiveDescendantKeyManager(activeOptions)
+      //   .withHorizontalOrientation('ltr')
+      //   .withVerticalOrientation()
+      //   .withWrap();
+      this.keyManager.setFirstItemActive();
+      this.onChange();
 
       return;
     }
 
+    // this.keyManager = new ActiveDescendantKeyManager(this.options)
+    //   .withHorizontalOrientation('ltr')
+    //   .withVerticalOrientation()
+    //   .withWrap();
     this.options.forEach(option => option.setShowing());
+    this.keyManager.setFirstItemActive();
     this.onChange();
   }
 
