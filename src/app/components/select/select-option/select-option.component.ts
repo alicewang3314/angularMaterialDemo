@@ -1,4 +1,3 @@
-import { FocusOrigin, FocusMonitor } from '@angular/cdk/a11y';
 import { Component, Input, HostBinding, HostListener, ElementRef, Renderer2 } from '@angular/core';
 import { SelectComponent } from '../select.component';
 import { SelectService } from '../select.service';
@@ -62,8 +61,7 @@ export class SelectOptionComponent {
 
   constructor(
     private service: SelectService,
-    private element: ElementRef,
-    private _focusMonitor?: FocusMonitor) {
+    private element: ElementRef) {
     this.select = this.service.getSelect();
   }
 }
