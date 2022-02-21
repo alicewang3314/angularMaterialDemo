@@ -55,17 +55,12 @@ export class SelectComponent implements AfterViewInit {
     if (this.options.length === 0) {
       return;
     }
-    // if (!this.isMulti) {
-    //   this.selected
-    //     ? this.keyManager.setActiveItem(this.selectedOption)
-    //     : this.keyManager.setFirstItemActive();
-    // }
     this.filter.nativeElement.focus();
-    // this.keyManager.setFirstItemActive();
   }
 
   hideDropdown() {
     this.dropdown.hide();
+    this.input.nativeElement.focus();
   }
 
   onDropMenuIconClick(event: UIEvent) {
@@ -115,17 +110,15 @@ export class SelectComponent implements AfterViewInit {
     }
     else if (['ArrowUp', 'Up', 'ArrowDown', 'Down', 'ArrowRight', 'Right', 'ArrowLeft', 'Left']
       .indexOf(event.key) > -1) {
-      // todo remove target from search
       this.keyManager.onKeydown(event);
-      //scroll down
-      if (['ArrowDown', 'Down', 'ArrowRight', 'Right']
+
+      if (['ArrowDown', 'Down', 'ArrowRight', 'Right']//scroll down
         .indexOf(event.key) > -1) {
-          this.keyManager.activeItem.scrollDownFocus();
+        this.keyManager.activeItem.scrollDownFocus();
       }
-      // scroll up
-      else if (['ArrowUp', 'Up', 'ArrowLeft', 'Left']
+      else if (['ArrowUp', 'Up', 'ArrowLeft', 'Left'] // scroll up
         .indexOf(event.key) > -1) {
-          this.keyManager.activeItem.scrollUpFocus();
+        this.keyManager.activeItem.scrollUpFocus();
       }
     }
     else if (event.key === 'PageUp' || event.key === 'PageDown' || event.key === 'Tab') {

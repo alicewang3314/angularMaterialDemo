@@ -6,7 +6,7 @@ import { SelectService } from '../select.service';
   selector: 'select-option',
   templateUrl: './select-option.component.html',
   styleUrls: ['./select-option.component.scss'],
-  host: { tabIndex: '-1' }
+  // host: { tabIndex: '-1' }
 })
 export class SelectOptionComponent {
   @Input() key: string;
