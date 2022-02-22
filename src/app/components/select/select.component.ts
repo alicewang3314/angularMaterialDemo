@@ -3,7 +3,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectOptionComponent } from './select-option/select-option.component';
 import { SelectDropdownComponent } from './select-dropdown/select-dropdown.component';
 import { SelectService } from './select.service';
-import { ActiveDescendantKeyManager, FocusKeyManager, InteractivityChecker } from '@angular/cdk/a11y';
+import { ActiveDescendantKeyManager, InteractivityChecker } from '@angular/cdk/a11y';
 
 
 @Component({
@@ -55,6 +55,7 @@ export class SelectComponent implements AfterViewInit {
       return;
     }
     this.filter.nativeElement.focus();
+    this.keyManager.setFirstItemActive();
   }
 
   hideDropdown() {
@@ -118,6 +119,10 @@ export class SelectComponent implements AfterViewInit {
     else if (['ArrowUp', 'Up', 'ArrowDown', 'Down', 'ArrowRight', 'Right', 'ArrowLeft', 'Left']
       .indexOf(event.key) > -1) {
       this.keyManager.onKeydown(event);
+      
+      while (this.keyManager.activeItem.isHided) {// skip hided items
+        this.keyManager.onKeydown(event);
+      }
 
       if (['ArrowDown', 'Down', 'ArrowRight', 'Right']//scroll down
         .indexOf(event.key) > -1) {
@@ -146,20 +151,11 @@ export class SelectComponent implements AfterViewInit {
           activeOptions.push(option);
         }
       });
-      // this.keyManager = new ActiveDescendantKeyManager(activeOptions)
-      //   .withHorizontalOrientation('ltr')
-      //   .withVerticalOrientation()
-      //   .withWrap();
       this.keyManager.setFirstItemActive();
       this.onChange();
 
       return;
     }
-
-    // this.keyManager = new ActiveDescendantKeyManager(this.options)
-    //   .withHorizontalOrientation('ltr')
-    //   .withVerticalOrientation()
-    //   .withWrap();
     this.options.forEach(option => option.setShowing());
     this.keyManager.setFirstItemActive();
     this.onChange();
@@ -257,7 +253,7 @@ export class SelectComponent implements AfterViewInit {
   // -- end of control value accessor
 
   ngAfterViewInit(): void {
-    setTimeout(() => {//??
+    setTimeout(() => {
       if (this.isMulti) {
         this.selectedOptionMulti = this.options.filter(option => this.selectedMulti.indexOf(option.key) !== -1);
         this.displayText = this.selectedOptionMulti === []
@@ -269,8 +265,6 @@ export class SelectComponent implements AfterViewInit {
         this.displayText = this.selectedOption ? this.selectedOption.value : '';;
       }
     });
-
-    // this.keyManager = new FocusKeyManager(this.options).withWrap();
 
     this.keyManager = new ActiveDescendantKeyManager(this.options)
       .withHorizontalOrientation('ltr')

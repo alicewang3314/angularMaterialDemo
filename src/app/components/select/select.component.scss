@@ -40,20 +40,11 @@
       background-color: transparent;
       border: 2px solid grey;
       border-radius: 20px 0 0 21px;
+      outline: none;
 
       &:active,
       &:focus {
         border-color: orange;
-      }
-
-      &:disabled {
-        cursor: default;
-        color: #93a1aa;
-        border-bottom: solid 1px #93a1aa;
-      }
-
-      &:disabled+.dropdown-arrow {
-        color: #93a1aa;
       }
     }
 
@@ -118,6 +109,11 @@
   outline: 0;
 
   &:focus {
+    border-color: orange;
+  }
+
+  &:blur {
+    background-color: transparent;
     border-color: orange;
   }
 
