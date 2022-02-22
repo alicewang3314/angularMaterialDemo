@@ -8,17 +8,40 @@
 <mat-card class="out-frame">
   <mat-card-title class="header">Singe Select Dropdown</mat-card-title>
   <mat-card-content>
-    <!-- <single-select-dropdown></single-select-dropdown> -->
-    <!-- <button [singleSelectTrigger]="dropdown" color="primary" mat-button>open</button>
-    <single-select-dropdown #dropdown>
-    </single-select-dropdown> -->
+    <captor-select placeholder="Pick Your Holiday Destination" [(ngModel)]="test">
+      <select-option key="1" value="30 Day Follow Up to Intro"></select-option>
+      <select-option key="2" value="Act of Attendance - In Person Testimony"></select-option>
+      <select-option key="3" value="Act of Attendance - In Person Testimony & Intro"></select-option>
+      <select-option key="4" value="Act of Input - Reg Information & Input Options"></select-option>
+      <select-option key="5" value="Act of Received Input - & Intro Information"></select-option>
+    </captor-select>
+    <p class="white"><b>Value:</b> {{test}}</p>
   </mat-card-content>
 </mat-card>
 
 <mat-card class="out-frame">
   <mat-card-title class="header">Multi Select Dropdown</mat-card-title>
   <mat-card-content>
-    <multi-select-dropdown></multi-select-dropdown>
+    <captor-select [isMulti]="true" placeholder="Pick Your Holiday Destination" [(ngModel)]="testMulti">
+      <select-option key="1" value="30 Day Follow Up to Intro"></select-option>
+      <select-option key="2" value="Act of Attendance - In Person Testimony"></select-option>
+      <select-option key="3" value="Act of Attendance - In Person Testimony & Intro"></select-option>
+      <select-option key="4" value="Act of Input - Reg Information & Input Options"></select-option>
+      <select-option key="5" value="Act of Received Input - & Intro Information"></select-option>
+      <select-option key="6" value="placehoder"></select-option>
+      <select-option key="7" value="placehoder"></select-option>
+      <select-option key="8" value="placehoder"></select-option>
+      <select-option key="6" value="placehoder"></select-option>
+      <select-option key="7" value="placehoder"></select-option>
+      <select-option key="8" value="placehoder"></select-option>
+      <select-option key="6" value="placehoder"></select-option>
+      <select-option key="7" value="placehoder"></select-option>
+      <select-option key="8" value="placehoder"></select-option>
+      <select-option key="6" value="placehoder"></select-option>
+      <select-option key="7" value="placehoder"></select-option>
+      <select-option key="8" value="placehoder"></select-option>
+    </captor-select>
+    <p class="white"><b>Value:</b> {{testMulti | json}}</p>
   </mat-card-content>
 </mat-card>
 
