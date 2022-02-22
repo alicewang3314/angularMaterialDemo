@@ -31,6 +31,7 @@ import { TestpageComponent } from './testpage/testpage.component';
 import { SelectComponent } from './components/select/select.component';
 import { SelectOptionComponent } from './components/select/select-option/select-option.component';
 import { SelectDropdownComponent } from './components/select/select-dropdown/select-dropdown.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { SelectDropdownComponent } from './components/select/select-dropdown/sel
     TestpageComponent,
     SelectComponent,
     SelectOptionComponent,
-    SelectDropdownComponent
+    SelectDropdownComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

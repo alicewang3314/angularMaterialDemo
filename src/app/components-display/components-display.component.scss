@@ -1,9 +1,15 @@
 .out-frame {
   width: 100%;
   min-height: 240px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   background-color: rgba(0, 0, 0, 0.33);
-  padding-bottom: 40px;
+  padding: 50px 60px;
+  box-shadow: inset 6px 6px 14px orange;
+
+  &:hover {
+    box-shadow: inset 2px 2px 5px orange;
+    transition: 0.4;
+  }
 
   .header {
     color: orange;

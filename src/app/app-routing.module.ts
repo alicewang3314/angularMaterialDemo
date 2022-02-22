@@ -5,8 +5,17 @@ import { ResultComponent } from './result/result.component';
 import { DetailsComponent } from './details/details.component';
 import { ComponentsDisplayComponent } from './components-display/components-display.component';
 import { TestpageComponent } from './testpage/testpage.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: 'test',
     component: TestpageComponent
@@ -29,7 +38,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/display'
+    redirectTo: '/home'
   }
 ];
 
