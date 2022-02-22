@@ -73,7 +73,7 @@ export class SelectComponent implements AfterViewInit {
   }
 
   public onKeyDown(event: KeyboardEvent) {
-    console.log(event.target)
+    //console.log(event.target)
     if (['Enter', 'ArrowDown', 'Down', 'ArrowUp', 'Up'].indexOf(event.key) > -1) {
       if (!this.dropdown.showing && (<HTMLElement>event.target).id !== 'filter') {
         this.showDropdown();

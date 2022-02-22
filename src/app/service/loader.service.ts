@@ -31,7 +31,7 @@ export class LoaderService {
   constructor(private overlay: Overlay) {
     this.isloading$
       .subscribe(isLoading => {
-        console.log('isloading', isLoading)
+        //console.log('isloading', isLoading)
         isLoading
           ? !this.overlayRef.hasAttached() && this.overlayRef.attach(new ComponentPortal(MatSpinner))
           : this.overlayRef.hasAttached() && this.overlayRef.detach();
