@@ -45,12 +45,10 @@ export class SelectComponent implements AfterViewInit {
   selectedOption: SelectOptionComponent;
   selectedOptionMulti: SelectOptionComponent[] = [];
   displayText: string;
-  filterVal: string;
   private keyManager: ActiveDescendantKeyManager<SelectOptionComponent>;
   private activeChecker: InteractivityChecker;
 
   showDropdown() {
-
     this.dropdown.show();
 
     if (this.options.length === 0) {
@@ -62,6 +60,13 @@ export class SelectComponent implements AfterViewInit {
   hideDropdown() {
     this.dropdown.hide();
     this.input.nativeElement.focus();
+    this.reset();
+  }
+
+  private reset() {
+    this.filter.nativeElement.value = '';
+    this.options.forEach(option => option.setShowing());
+    // this.keyManager.setFirstItemActive();
   }
 
   onDropMenuIconClick(event: UIEvent) {
@@ -73,7 +78,6 @@ export class SelectComponent implements AfterViewInit {
   }
 
   public onKeyDown(event: KeyboardEvent) {
-    //console.log(event.target)
     if (['Enter', 'ArrowDown', 'Down', 'ArrowUp', 'Up'].indexOf(event.key) > -1) {
       if (!this.dropdown.showing && (<HTMLElement>event.target).id !== 'filter') {
         this.showDropdown();
@@ -103,8 +107,9 @@ export class SelectComponent implements AfterViewInit {
           this.selected = this.selectedOption.key;
           this.displayText = this.selectedOption ? this.selectedOption.value : '';
         }
+        this.hideDropdown();
       }
-      this.hideDropdown();
+
       this.onChange();
     }
     else if (event.key === 'Escape' || event.key === 'Esc') {

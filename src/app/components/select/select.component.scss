@@ -1,6 +1,6 @@
 .input-wrapper {
   position: relative;
-  min-width: 250px;
+  min-width: 280px;
   padding: .5rem 0 1.5rem;
   width: 30%;
 
@@ -84,14 +84,18 @@
   color: whitesmoke;
 }
 
+.dropdown-wrapper {
+  max-height: 400px;
+}
+
 .multi-select-actions {
   display: flex;
   justify-content: space-between;
   background-color: rgb(39, 39, 39);
-  border-top: 1px grey solid;
-  border-left: 1px grey solid;
-  border-right: 1px grey solid;
-  border-radius: 4px 4px 0 0;
+  // border-top: 1px grey solid;
+  // border-left: 1px grey solid;
+  // border-right: 1px grey solid;
+  // border-radius: 4px 4px 0 0;
 
   button {
     border-bottom: 1px solid grey;
@@ -120,19 +124,16 @@
   &_background {
     background-color: rgb(39, 39, 39);
     padding: 6px 14px;
-    border-left: 1px grey solid;
-    border-right: 1px grey solid;
-
-    &:first-of-type {
-      border-top: 1px grey solid;
-      border-radius: 4px 4px 0 0;
-    }
+    border-bottom: 1px grey solid;
   }
 }
 
+
 ::ng-deep {
-  .cdk-overlay-pane {
+  .cdk-overlay-pane.dropdown-container {
     flex-direction: column;
     max-height: 400px;
+    border: 1px solid grey;
+    border-radius: 4px;
   }
 }

@@ -52,6 +52,7 @@ export class SelectDropdownComponent {
       positionStrategy: positionStrategy,
       scrollStrategy: scrollStrategy,
       hasBackdrop: true,
+      panelClass: 'dropdown-container',
       backdropClass: 'cdk-overlay-transparent-backdrop'
     });
   }

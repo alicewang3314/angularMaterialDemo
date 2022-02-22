@@ -17,8 +17,9 @@
         </button>
       </div>
       <div class="dropdown-filter_background">
-        <input type="text" #filter (keydown)="onKeyDown($event)" [ngModel]="filterVal" (ngModelChange)="applyFilter($event)" class="dropdown-filter"
-          placeholder="Search" autocomplete="off" id="filter">
+        <input type="text" #filter (keydown)="onKeyDown($event)" [ngModel]="filterVal"
+          (ngModelChange)="applyFilter($event)" class="dropdown-filter" placeholder="Search" autocomplete="off"
+          id="filter">
       </div>
       <div class="dropdown-options-container">
         <ng-content role="list" select="select-option"></ng-content>
