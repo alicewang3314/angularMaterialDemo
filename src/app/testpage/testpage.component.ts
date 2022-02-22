@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestpageComponent implements OnInit {
 
+  test: any;
+  testMulti: any;
   constructor() { }
 
   ngOnInit() {

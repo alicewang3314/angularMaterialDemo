@@ -42,11 +42,12 @@ export class SelectComponent implements AfterViewInit {
   @ViewChild('filter', { static: true }) filter: ElementRef;
   @ViewChild(SelectDropdownComponent, { static: true }) dropdown: SelectDropdownComponent;
   @ContentChildren(SelectOptionComponent) options: QueryList<SelectOptionComponent>;
-  selectedOption: SelectOptionComponent;
+  selectedOption: SelectOptionComponent;a
   selectedOptionMulti: SelectOptionComponent[] = [];
   displayText: string;
   private keyManager: ActiveDescendantKeyManager<SelectOptionComponent>;
   private activeChecker: InteractivityChecker;
+  filterVal: string;
 
   showDropdown() {
     this.dropdown.show();
@@ -226,8 +227,8 @@ export class SelectComponent implements AfterViewInit {
     this.onTouchedFn = fn;
   }
 
-  onChangeFn = (_: any) => { };// ?
-  onTouchedFn = () => { }; //?
+  onChangeFn = (_: any) => { };
+  onTouchedFn = () => { }; 
   onChange() {
     if (this.isMulti) {
       this.onChangeFn(this.selectedMulti);

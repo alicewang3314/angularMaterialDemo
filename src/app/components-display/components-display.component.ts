@@ -8,6 +8,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./components-display.component.scss']
 })
 export class ComponentsDisplayComponent implements OnInit {
+  test: any;
+  testMulti: any;
 
   constructor(public dialog: MatDialog) { }
 
