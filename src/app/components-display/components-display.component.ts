@@ -10,10 +10,16 @@ import { MatDialog } from '@angular/material/dialog';
 export class ComponentsDisplayComponent implements OnInit {
   test: any;
   testMulti: any;
+  isPure = false;
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  toggle(ev) {
+    const { checked } = ev;
+    this.isPure = checked;
   }
 
   open() {

@@ -1,10 +1,11 @@
 .out-frame {
   width: 100%;
   min-height: 240px;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
   background-color: rgba(0, 0, 0, 0.33);
   padding: 50px 60px;
   box-shadow: inset 6px 6px 14px orange;
+  border-radius: 0;
 
   &:hover {
     box-shadow: inset 2px 2px 5px orange;
@@ -39,12 +40,12 @@
   &_actions {
     display: flex;
     justify-content: space-between;
-  
+
     button {
       border-bottom: 1px solid grey;
       border-radius: 0;
     }
-  
+
     .mat-icon {
       font-weight: 900;
       font-size: 20px;

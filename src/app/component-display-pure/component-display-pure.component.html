@@ -1,10 +1,8 @@
+<!-- <h3 style="padding-bottom: 30px;">Pure Angular Material Components</h3> -->
+
 <mat-card class="out-frame">
   <mat-card-title class="header">Add Button</mat-card-title>
   <mat-card-content>
-    <!-- <button mat-fab color="primary">
-      <mat-icon>add</mat-icon>
-    </button> -->
-
     <button mat-mini-fab color="primary">
       <mat-icon>add</mat-icon>
     </button>
@@ -52,7 +50,7 @@
 <mat-card class="out-frame">
   <mat-card-title class="header">Switch</mat-card-title>
   <mat-card-content>
-    <switch-button></switch-button>
+    <mat-slide-toggle labelPosition="before">ACP Clients Only</mat-slide-toggle>
   </mat-card-content>
 </mat-card>
 
@@ -74,14 +72,19 @@
 <mat-card class="out-frame">
   <mat-card-title class="header">Check Box</mat-card-title>
   <mat-card-content>
-    <check-box></check-box>
+    <mat-checkbox>Speak</mat-checkbox> <br />
+    <mat-checkbox>Read</mat-checkbox> <br />
+    <mat-checkbox>Write</mat-checkbox>
   </mat-card-content>
 </mat-card>
 
 <mat-card class="out-frame">
   <mat-card-title class="header">Radio Buttons</mat-card-title>
   <mat-card-content>
-    <radio-button></radio-button>
+    <mat-radio-group>
+      <mat-radio-button value="1">Domestic</mat-radio-button> &nbsp;
+      <mat-radio-button value="2">International</mat-radio-button>
+    </mat-radio-group>
   </mat-card-content>
 </mat-card>
 
@@ -95,13 +98,49 @@
 <mat-card class="out-frame">
   <mat-card-title class="header">Accordions</mat-card-title>
   <mat-card-content>
-    <accordions></accordions>
+    <!-- <accordions></accordions> -->
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Overdue
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut placerat orci nulla pellentesque dignissim enim sit amet. Porta nibh venenatis cras sed
+          felis. Dui nunc mattis enim ut. Dui accumsan sit amet nulla facilisi morbi tempus. Ullamcorper dignissim cras
+          tincidunt lobortis feugiat vivamus at. Nullam ac tortor vitae purus faucibus ornare suspendisse. Venenatis
+          lectus magna fringilla urna porttitor rhoncus dolor.</p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Today
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Tempor orci dapibus ultrices in iaculis. Diam vulputate ut pharetra sit amet aliquam id diam.
+          Mauris cursus mattis molestie a iaculis at. Lobortis mattis aliquam faucibus purus.</p>
+      </mat-expansion-panel>
+    </mat-accordion>
   </mat-card-content>
 </mat-card>
 
 <mat-card class="out-frame">
   <mat-card-title class="header">Modal Windows</mat-card-title>
   <mat-card-content>
-    <button mat-raised-button color="primary" (click)="open()">Open Modal</button>
+    <button mat-raised-button color="primary" (click)="openDialog()">Open Modal</button>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="out-frame">
+  <mat-card-title class="header">Calender</mat-card-title>
+  <mat-card-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" autocomplete="off">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
   </mat-card-content>
 </mat-card>

@@ -32,7 +32,7 @@ import { SelectComponent } from './components/select/select.component';
 import { SelectOptionComponent } from './components/select/select-option/select-option.component';
 import { SelectDropdownComponent } from './components/select/select-dropdown/select-dropdown.component';
 import { HomeComponent } from './home/home.component';
-import { ComponentDisplayPureComponent } from './component-display-pure/component-display-pure.component';
+import { ComponentDisplayPureComponent, DialogContent } from './component-display-pure/component-display-pure.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +61,8 @@ import { ComponentDisplayPureComponent } from './component-display-pure/componen
     SelectOptionComponent,
     SelectDropdownComponent,
     HomeComponent,
-    ComponentDisplayPureComponent
+    ComponentDisplayPureComponent,
+    DialogContent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +75,6 @@ import { ComponentDisplayPureComponent } from './component-display-pure/componen
   ],
   providers: [RouterService],
   bootstrap: [AppComponent],
-  entryComponents: [MatSpinner, MorePholotDialog, ModalWindowsComponent]
+  entryComponents: [MatSpinner, MorePholotDialog, ModalWindowsComponent, DialogContent]
 })
 export class AppModule { }
