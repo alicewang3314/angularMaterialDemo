@@ -1,0 +1,107 @@
+<mat-card class="out-frame">
+  <mat-card-title class="header">Add Button</mat-card-title>
+  <mat-card-content>
+    <!-- <button mat-fab color="primary">
+      <mat-icon>add</mat-icon>
+    </button> -->
+
+    <button mat-mini-fab color="primary">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="out-frame">
+  <mat-card-title class="header">Singe Select Dropdown</mat-card-title>
+  <mat-card-content>
+    <mat-form-field color="primary" appearance="outline" class="single-select">
+      <mat-label>Single Select</mat-label>
+      <mat-select (openedChange)="singleSelectToggle($event)">
+        <input autocomplete="off" matInput placeholder="filter" class="single-select_filter" [ngModel]="singleFilter"
+          (ngModelChange)="singleSelectFilter($event)">
+        <mat-option *ngFor="let item of singleSelect" value="item.val">{{item.key}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="out-frame">
+  <mat-card-title class="header">Multi Select Dropdown</mat-card-title>
+  <mat-card-content>
+    <mat-form-field appearance="fill" color="primary" appearance="outline" class="multi-select">
+      <mat-label> Multi Select</mat-label>
+      <mat-select [formControl]="multi" multiple (openedChange)="multiSelectToggle($event)">
+        <div class="multi-select_actions">
+          <button mat-button (click)="selectAll()">
+            <mat-icon> check</mat-icon>
+            Check All
+          </button>
+          <button mat-button (click)="unselectAll()">
+            <mat-icon>close</mat-icon>
+            Uncheck All
+          </button>
+        </div>
+        <input class="multi-select_filter" autocomplete="off" matInput placeholder="filter" class="multi-select_filter"
+          [ngModel]="multiFilter" (ngModelChange)="multiSelectFilter($event)">
+        <mat-option *ngFor="let item of multiSelect" [value]="item.val">{{item.key}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="out-frame">
+  <mat-card-title class="header">Switch</mat-card-title>
+  <mat-card-content>
+    <switch-button></switch-button>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="out-frame">
+  <mat-card-title class="header">Tiles</mat-card-title>
+  <mat-card-content>
+    <tiles></tiles>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="out-frame">
+  <mat-card-title class="header">Large Tiles</mat-card-title>
+  <mat-card-content>
+    <large-tiles></large-tiles>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card class="out-frame">
+  <mat-card-title class="header">Check Box</mat-card-title>
+  <mat-card-content>
+    <check-box></check-box>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="out-frame">
+  <mat-card-title class="header">Radio Buttons</mat-card-title>
+  <mat-card-content>
+    <radio-button></radio-button>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="out-frame">
+  <mat-card-title class="header">List Box</mat-card-title>
+  <mat-card-content>
+    <list-box></list-box>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="out-frame">
+  <mat-card-title class="header">Accordions</mat-card-title>
+  <mat-card-content>
+    <accordions></accordions>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="out-frame">
+  <mat-card-title class="header">Modal Windows</mat-card-title>
+  <mat-card-content>
+    <button mat-raised-button color="primary" (click)="open()">Open Modal</button>
+  </mat-card-content>
+</mat-card>

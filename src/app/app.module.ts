@@ -32,6 +32,7 @@ import { SelectComponent } from './components/select/select.component';
 import { SelectOptionComponent } from './components/select/select-option/select-option.component';
 import { SelectDropdownComponent } from './components/select/select-dropdown/select-dropdown.component';
 import { HomeComponent } from './home/home.component';
+import { ComponentDisplayPureComponent } from './component-display-pure/component-display-pure.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { HomeComponent } from './home/home.component';
     SelectComponent,
     SelectOptionComponent,
     SelectDropdownComponent,
-    HomeComponent
+    HomeComponent,
+    ComponentDisplayPureComponent
   ],
   imports: [
     BrowserModule,

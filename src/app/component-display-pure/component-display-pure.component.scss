@@ -1,0 +1,53 @@
+.out-frame {
+  width: 100%;
+  min-height: 240px;
+  margin-bottom: 60px;
+  background-color: rgba(0, 0, 0, 0.33);
+  padding: 50px 60px;
+  box-shadow: inset 6px 6px 14px orange;
+
+  &:hover {
+    box-shadow: inset 2px 2px 5px orange;
+    transition: 0.4;
+  }
+
+  .header {
+    color: orange;
+  }
+}
+
+.single-select {
+  width: 30%;
+
+  &_filter {
+    line-height: 40px;
+    width: calc(100% - 1em);
+    margin-left: 1em;
+  }
+}
+
+
+.multi-select {
+  width: 30%;
+
+  &_filter {
+    line-height: 40px;
+    width: calc(100% - 1em);
+    margin-left: 1em;
+  }
+
+  &_actions {
+    display: flex;
+    justify-content: space-between;
+  
+    button {
+      border-bottom: 1px solid grey;
+      border-radius: 0;
+    }
+  
+    .mat-icon {
+      font-weight: 900;
+      font-size: 20px;
+    }
+  }
+}

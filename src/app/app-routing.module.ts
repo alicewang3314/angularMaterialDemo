@@ -6,6 +6,7 @@ import { DetailsComponent } from './details/details.component';
 import { ComponentsDisplayComponent } from './components-display/components-display.component';
 import { TestpageComponent } from './testpage/testpage.component';
 import { HomeComponent } from './home/home.component';
+import { ComponentDisplayPureComponent } from './component-display-pure/component-display-pure.component'
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'display',
     component: ComponentsDisplayComponent
+  },
+  {
+    path: 'display-pure',
+    component: ComponentDisplayPureComponent
   },
   {
     path: '**',
