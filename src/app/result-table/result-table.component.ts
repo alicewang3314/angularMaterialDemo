@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { ReentrantProfile } from 'src/app/types/reentrantProfile';
 import { CacheService } from 'src/app/service/cache.service';
 import { Router } from '@angular/router';
