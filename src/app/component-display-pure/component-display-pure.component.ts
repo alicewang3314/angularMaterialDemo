@@ -13,6 +13,7 @@ export class ComponentDisplayPureComponent implements OnInit {
   multi = new FormControl();
   singleFilter = '';
   multiFilter = '';
+
   range = new FormGroup({
     start: new FormControl(),
     end: new FormControl(),
